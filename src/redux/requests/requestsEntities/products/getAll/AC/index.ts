@@ -8,7 +8,7 @@ export enum ActionTypes {
 }
 
 export const Actions = {
-  getAllProducts: (data: string) => createAction(ActionTypes.PRODUCTS_GET_ALL_REQUEST, {data}),
+  getAllProducts: () => createAction(ActionTypes.PRODUCTS_GET_ALL_REQUEST),
   getAllProductsSuccess: (data: ProductModel[]) => {
     return createAction(ActionTypes.PRODUCTS_GET_ALL_REQUEST_SUCCESS, {data});
   },
