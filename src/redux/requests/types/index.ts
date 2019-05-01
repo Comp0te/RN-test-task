@@ -3,3 +3,8 @@ export interface RequestState<T> {
   errors: string | null;
   data: T | null;
 }
+
+export interface AuthResponse {
+  success: boolean;
+  token: string;
+}
