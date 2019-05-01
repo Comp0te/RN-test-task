@@ -1,3 +1,4 @@
+import { Action } from 'redux';
 import { AjaxError } from 'rxjs/ajax';
 import { Observable, of } from 'rxjs';
 import { ofType } from 'redux-observable';
@@ -6,9 +7,9 @@ import reviewsService from '../../../../../../shared/services/reviews.service';
 import * as fromActions from '../AC';
 
 export const getAllReviewsRequestEpic = (
-  action$: Observable<fromActions.Actions>,
+  action$: Observable<Action>,
 ) => action$.pipe(
-  ofType<fromActions.Actions, ReturnType<typeof fromActions.Actions.getAllReviews>>(
+  ofType<Action, ReturnType<typeof fromActions.Actions.getAllReviews>>(
     fromActions.ActionTypes.REVIEWS_GET_ALL_REQUEST,
   ),
   switchMap((action) => reviewsService.getAllReviews(action.payload.data).pipe(

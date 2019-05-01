@@ -1,3 +1,4 @@
+import { Action } from 'redux';
 import { AjaxError } from 'rxjs/ajax';
 import { Observable, of } from 'rxjs';
 import { ofType } from 'redux-observable';
@@ -6,9 +7,9 @@ import authService from '../../../../../../shared/services/auth.service';
 import * as fromActions from '../AC';
 
 export const loginRequestEpic = (
-  action$: Observable<fromActions.Actions>,
+  action$: Observable<Action>,
 ) => action$.pipe(
-  ofType<fromActions.Actions, ReturnType<typeof fromActions.Actions.login>>(
+  ofType<Action, ReturnType<typeof fromActions.Actions.login>>(
     fromActions.ActionTypes.LOGIN_REQUEST,
   ),
   switchMap((action) => authService.login(action.payload.data).pipe(
