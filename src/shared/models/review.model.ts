@@ -18,7 +18,11 @@ export class ReviewModel {
   }
 }
 
-export interface ReviewResponse extends ReviewModel {
+export interface ReviewResponse {
+  id: number;
+  product: number;
+  rate: number;
+  text: string;
   created_by: {
     id: number;
     username: string;
