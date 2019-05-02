@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux auth request reducers update state after LOGIN_REQUEST action 1`] = `
+Object {
+  "data": null,
+  "errors": null,
+  "isLoading": true,
+}
+`;
+
+exports[`Redux auth request reducers update state after LOGIN_REQUEST_FAIL action 1`] = `
+Object {
+  "data": null,
+  "errors": "error",
+  "isLoading": false,
+}
+`;
+
+exports[`Redux auth request reducers update state after LOGIN_REQUEST_SUCCESS action 1`] = `
+Object {
+  "data": Object {
+    "success": true,
+    "token": "token",
+  },
+  "errors": null,
+  "isLoading": false,
+}
+`;
+
+exports[`Redux auth request reducers update state after REGISTER_REQUEST action 1`] = `
+Object {
+  "data": null,
+  "errors": null,
+  "isLoading": true,
+}
+`;
+
+exports[`Redux auth request reducers update state after REGISTER_REQUEST_FAIL action 1`] = `
+Object {
+  "data": null,
+  "errors": "error",
+  "isLoading": false,
+}
+`;
+
+exports[`Redux auth request reducers update state after REGISTER_REQUEST_SUCCESS action 1`] = `
+Object {
+  "data": Object {
+    "success": true,
+    "token": "token",
+  },
+  "errors": null,
+  "isLoading": false,
+}
+`;

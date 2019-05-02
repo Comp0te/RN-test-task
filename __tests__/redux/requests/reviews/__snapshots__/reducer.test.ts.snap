@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux reviews request reducers update state after REVIEW_POST_REQUEST action 1`] = `
+Object {
+  "data": null,
+  "errors": null,
+  "isLoading": true,
+}
+`;
+
+exports[`Redux reviews request reducers update state after REVIEW_POST_REQUEST_FAIL action 1`] = `
+Object {
+  "data": null,
+  "errors": "error",
+  "isLoading": false,
+}
+`;
+
+exports[`Redux reviews request reducers update state after REVIEW_POST_REQUEST_SUCCESS action 1`] = `
+Object {
+  "data": Object {
+    "created_by": Object {
+      "id": 1,
+      "username": "bla-bla",
+    },
+    "id": 1,
+    "product": 1,
+    "rate": 5,
+    "text": "text",
+  },
+  "errors": null,
+  "isLoading": false,
+}
+`;
+
+exports[`Redux reviews request reducers update state after REVIEWS_GET_ALL_REQUEST action 1`] = `
+Object {
+  "data": null,
+  "errors": null,
+  "isLoading": true,
+}
+`;
+
+exports[`Redux reviews request reducers update state after REVIEWS_GET_ALL_REQUEST_FAIL action 1`] = `
+Object {
+  "data": null,
+  "errors": "error",
+  "isLoading": false,
+}
+`;
+
+exports[`Redux reviews request reducers update state after REVIEWS_GET_ALL_REQUEST_SUCCESS action 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "created_by": Object {
+        "id": 1,
+        "username": "bla-bla",
+      },
+      "id": 1,
+      "product": 1,
+      "rate": 5,
+      "text": "text",
+    },
+  ],
+  "errors": null,
+  "isLoading": false,
+}
+`;
