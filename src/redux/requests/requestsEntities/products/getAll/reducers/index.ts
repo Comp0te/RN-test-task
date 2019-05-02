@@ -2,7 +2,7 @@ import * as fromActions from '../AC';
 import { RequestState } from '../../../../types';
 import { ProductModel } from '../../../../../../shared/models/product.model';
 
-const initialState: RequestState<ProductModel[]> = {
+export const initialState: RequestState<ProductModel[]> = {
   isLoading: false,
   errors: null,
   data: null,

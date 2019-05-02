@@ -2,7 +2,7 @@ import * as fromActions from '../AC';
 import { RequestState } from '../../../../types';
 import { ReviewResponse } from '../../../../../../shared/models/review.model';
 
-const initialState: RequestState<ReviewResponse> = {
+export const initialState: RequestState<ReviewResponse> = {
   isLoading: false,
   errors: null,
   data: null,

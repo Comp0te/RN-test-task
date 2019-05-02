@@ -1,7 +1,7 @@
 import * as fromActions from '../AC';
 import { AuthResponse, RequestState } from '../../../../types';
 
-const initialState: RequestState<AuthResponse> = {
+export const initialState: RequestState<AuthResponse> = {
   isLoading: false,
   errors: null,
   data: null,
