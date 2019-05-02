@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux auth request actions creates a LOGIN_REQUEST action 1`] = `
+Object {
+  "payload": Object {
+    "data": Object {
+      "password": "password",
+      "username": "Compote",
+    },
+  },
+  "type": "LOGIN_REQUEST",
+}
+`;
+
+exports[`Redux auth request actions creates a LOGIN_REQUEST_FAIL action 1`] = `
+Object {
+  "payload": Object {
+    "errors": "error",
+  },
+  "type": "LOGIN_REQUEST_FAIL",
+}
+`;
+
+exports[`Redux auth request actions creates a LOGIN_REQUEST_SUCCESS action 1`] = `
+Object {
+  "payload": Object {
+    "data": Object {
+      "success": true,
+      "token": "token",
+    },
+  },
+  "type": "LOGIN_REQUEST_SUCCESS",
+}
+`;
+
+exports[`Redux auth request actions creates a REGISTER_REQUEST action 1`] = `
+Object {
+  "payload": Object {
+    "data": Object {
+      "password": "password",
+      "username": "Compote",
+    },
+  },
+  "type": "REGISTER_REQUEST",
+}
+`;
+
+exports[`Redux auth request actions creates a REGISTER_REQUEST_FAIL action 1`] = `
+Object {
+  "payload": Object {
+    "errors": "error",
+  },
+  "type": "REGISTER_REQUEST_FAIL",
+}
+`;
+
+exports[`Redux auth request actions creates a REGISTER_REQUEST_SUCCESS action 1`] = `
+Object {
+  "payload": Object {
+    "data": Object {
+      "success": true,
+      "token": "token",
+    },
+  },
+  "type": "REGISTER_REQUEST_SUCCESS",
+}
+`;

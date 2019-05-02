@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux reviews request actions creates a REVIEW_POST_REQUEST action 1`] = `
+Object {
+  "payload": Object {
+    "data": Object {
+      "product_id": "id",
+      "rate": 2,
+      "text": "text",
+    },
+  },
+  "type": "REVIEW_POST_REQUEST",
+}
+`;
+
+exports[`Redux reviews request actions creates a REVIEW_POST_REQUEST_FAIL action 1`] = `
+Object {
+  "payload": Object {
+    "errors": "error",
+  },
+  "type": "REVIEW_POST_REQUEST_FAIL",
+}
+`;
+
+exports[`Redux reviews request actions creates a REVIEW_POST_REQUEST_SUCCESS action 1`] = `
+Object {
+  "payload": Object {
+    "data": Object {
+      "created_by": Object {
+        "id": 1,
+        "username": "bla-bla",
+      },
+      "id": 1,
+      "product": 1,
+      "rate": 5,
+      "text": "text",
+    },
+  },
+  "type": "REVIEW_POST_REQUEST_SUCCESS",
+}
+`;
+
+exports[`Redux reviews request actions creates a REVIEWS_GET_ALL_REQUEST action 1`] = `
+Object {
+  "payload": Object {
+    "data": "id",
+  },
+  "type": "REVIEWS_GET_ALL_REQUEST",
+}
+`;
+
+exports[`Redux reviews request actions creates a REVIEWS_GET_ALL_REQUEST_FAIL action 1`] = `
+Object {
+  "payload": Object {
+    "errors": "error",
+  },
+  "type": "REVIEWS_GET_ALL_REQUEST_FAIL",
+}
+`;
+
+exports[`Redux reviews request actions creates a REVIEWS_GET_ALL_REQUEST_SUCCESS action 1`] = `
+Object {
+  "payload": Object {
+    "data": Array [
+      Object {
+        "created_by": Object {
+          "id": 1,
+          "username": "bla-bla",
+        },
+        "id": 1,
+        "product": 1,
+        "rate": 5,
+        "text": "text",
+      },
+    ],
+  },
+  "type": "REVIEWS_GET_ALL_REQUEST_SUCCESS",
+}
+`;

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux products request actions creates a PRODUCTS_GET_ALL_REQUEST action 1`] = `
+Object {
+  "type": "PRODUCTS_GET_ALL_REQUEST",
+}
+`;
+
+exports[`Redux products request actions creates a PRODUCTS_GET_ALL_REQUEST_FAIL action 1`] = `
+Object {
+  "payload": Object {
+    "errors": "error",
+  },
+  "type": "PRODUCTS_GET_ALL_REQUEST_FAIL",
+}
+`;
+
+exports[`Redux products request actions creates a PRODUCTS_GET_ALL_REQUEST_SUCCESS action 1`] = `
+Object {
+  "payload": Object {
+    "data": Array [
+      Object {
+        "id": 1,
+        "img": "img",
+        "text": "text",
+        "title": "title",
+      },
+    ],
+  },
+  "type": "PRODUCTS_GET_ALL_REQUEST_SUCCESS",
+}
+`;
