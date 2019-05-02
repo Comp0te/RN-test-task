@@ -7,7 +7,7 @@ import {
   reducer as registerReducer,
   initialState as registerInitialState,
 } from '../../../../src/redux/requests/requestsEntities/auth/register/reducers';
-import { authInputMock, authResponseMock } from '../../../../mocksForTests';
+import { authInputMock, authResponseMock } from '../../../../__mocks__';
 
 describe('Redux auth request reducers', () => {
   it('update state after LOGIN_REQUEST action', () => {

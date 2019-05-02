@@ -7,7 +7,7 @@ import {
   reducer as postReducer,
   initialState as postInitialState,
 } from '../../../../src/redux/requests/requestsEntities/reviews/post/reducers';
-import { reviewResponseMock, reviewPostInputMock } from '../../../../mocksForTests';
+import { reviewResponseMock, reviewPostInputMock } from '../../../../__mocks__';
 
 describe('Redux reviews request reducers', () => {
   it('update state after REVIEWS_GET_ALL_REQUEST action', () => {

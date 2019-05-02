@@ -1,5 +1,5 @@
 import { requestsAC } from '../../../../src/redux/requests/AC';
-import { productMock } from '../../../../mocksForTests';
+import { productMock } from '../../../../__mocks__';
 
 describe('Redux products request actions', () => {
   it('creates a PRODUCTS_GET_ALL_REQUEST action', () => {

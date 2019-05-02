@@ -3,7 +3,7 @@ import {
   reducer as getAllReducer,
   initialState as getAllInitialState,
 } from '../../../../src/redux/requests/requestsEntities/products/getAll/reducers';
-import { productMock } from '../../../../mocksForTests';
+import { productMock } from '../../../../__mocks__';
 
 describe('Redux products request reducers', () => {
   it('update state after PRODUCTS_GET_ALL_REQUEST action', () => {

@@ -1,5 +1,5 @@
 import { requestsAC } from '../../../../src/redux/requests/AC';
-import { reviewPostInputMock, reviewResponseMock } from '../../../../mocksForTests';
+import { reviewPostInputMock, reviewResponseMock } from '../../../../__mocks__';
 
 describe('Redux reviews request actions', () => {
   it('creates a REVIEWS_GET_ALL_REQUEST action', () => {

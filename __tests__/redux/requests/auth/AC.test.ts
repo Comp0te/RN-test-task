@@ -1,5 +1,5 @@
 import { requestsAC } from '../../../../src/redux/requests/AC';
-import { authInputMock, authResponseMock } from '../../../../mocksForTests';
+import { authInputMock, authResponseMock } from '../../../../__mocks__';
 
 describe('Redux auth request actions', () => {
   it('creates a LOGIN_REQUEST action', () => {
