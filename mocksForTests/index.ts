@@ -32,7 +32,7 @@ export const reviewResponseMock: ReviewResponse = {
   rate: 5,
 };
 
-export const reviewPostInput :IReviewPostInput = {
+export const reviewPostInputMock: IReviewPostInput = {
   text: 'text',
   rate: 2,
   product_id: 'id',

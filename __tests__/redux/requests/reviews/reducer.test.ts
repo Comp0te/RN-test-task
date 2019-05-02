@@ -7,7 +7,7 @@ import {
   reducer as postReducer,
   initialState as postInitialState,
 } from '../../../../src/redux/requests/requestsEntities/reviews/post/reducers';
-import { reviewResponseMock, reviewPostInput } from '../../../../mocksForTests';
+import { reviewResponseMock, reviewPostInputMock } from '../../../../mocksForTests';
 
 describe('Redux reviews request reducers', () => {
   it('update state after REVIEWS_GET_ALL_REQUEST action', () => {
@@ -34,7 +34,7 @@ describe('Redux reviews request reducers', () => {
   it('update state after REVIEW_POST_REQUEST action', () => {
     expect(postReducer(
       postInitialState,
-      requestsAC.postReview.Actions.postReview(reviewPostInput)),
+      requestsAC.postReview.Actions.postReview(reviewPostInputMock)),
     ).toMatchSnapshot();
   });
 

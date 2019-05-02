@@ -1,5 +1,5 @@
 import { requestsAC } from '../../../../src/redux/requests/AC';
-import { reviewPostInput, reviewResponseMock } from '../../../../mocksForTests';
+import { reviewPostInputMock, reviewResponseMock } from '../../../../mocksForTests';
 
 describe('Redux reviews request actions', () => {
   it('creates a REVIEWS_GET_ALL_REQUEST action', () => {
@@ -15,7 +15,7 @@ describe('Redux reviews request actions', () => {
   });
 
   it('creates a REVIEW_POST_REQUEST action', () => {
-    expect(requestsAC.postReview.Actions.postReview(reviewPostInput)).toMatchSnapshot();
+    expect(requestsAC.postReview.Actions.postReview(reviewPostInputMock)).toMatchSnapshot();
   });
 
   it('creates a REVIEW_POST_REQUEST_SUCCESS action', () => {
