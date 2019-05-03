@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux auth reducers update state after AUTH_LOGOUT action 1`] = `
+Object {
+  "isAuthUser": false,
+}
+`;
+
+exports[`Redux auth reducers update state after AUTH_SET_IS_AUTH_USER action 1`] = `
+Object {
+  "isAuthUser": true,
+}
+`;
