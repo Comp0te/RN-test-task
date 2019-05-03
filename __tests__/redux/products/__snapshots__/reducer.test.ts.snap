@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux products reducers update state after SET_PRODUCTS_DATA action 1`] = `
+Object {
+  "allIds": Array [
+    "1",
+  ],
+  "entities": Object {
+    "1": ProductModel {
+      "id": 1,
+      "img": "img",
+      "text": "text",
+      "title": "title",
+    },
+  },
+}
+`;

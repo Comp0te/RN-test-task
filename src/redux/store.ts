@@ -4,13 +4,16 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { requestsReducer } from './requests/reducers';
 import { authReducer } from './auth/reducers';
+import { productsReducer } from './products/reducers';
 
 import { requestsEpics } from './requests/epics';
 import { authEpics } from './auth/epics';
+import { productsEpics } from './products/epics';
 
 export const rootReducer = combineReducers({
   requests: requestsReducer,
   auth: authReducer,
+  products: productsReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
@@ -18,6 +21,7 @@ export type RootState = ReturnType<typeof rootReducer>;
 const rootEpic = combineEpics(
   ...requestsEpics,
   ...authEpics,
+  ...productsEpics,
 );
 
 const epicMiddleware = createEpicMiddleware();

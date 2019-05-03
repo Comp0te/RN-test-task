@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux products actions creates a SET_PRODUCTS_DATA action 1`] = `
+Object {
+  "payload": Object {
+    "data": Array [
+      Object {
+        "id": 1,
+        "img": "img",
+        "text": "text",
+        "title": "title",
+      },
+      Object {
+        "id": 1,
+        "img": "img",
+        "text": "text",
+        "title": "title",
+      },
+    ],
+  },
+  "type": "SET_PRODUCTS_DATA",
+}
+`;
