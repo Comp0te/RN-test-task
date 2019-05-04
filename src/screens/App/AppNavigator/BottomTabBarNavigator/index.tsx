@@ -6,8 +6,7 @@ import { Icon } from 'react-native-elements';
 import { createBottomTabNavigator } from 'react-navigation';
 
 import ProfileScreen from './ProfileScreen';
-// import ProductsNavigator from './ProductsNavigator';
-// import HomeScreen from './ProductsNavigator/HomeScreen';
+import ProfileNavigator from './ProfileNavigator';
 import navService from '../../../../shared/services/nav.service';
 
 export default createBottomTabNavigator({
@@ -15,18 +14,15 @@ export default createBottomTabNavigator({
     screen: ProfileScreen,
     navigationOptions: navService.navigationOptions('products'),
   },
-  ProfileScreen: {
-    screen: ProfileScreen,
-    navigationOptions: navService.navigationOptions('profile'),
-  },
+  ProfileNavigator,
 }, {
-  initialRouteName: 'ProfileScreen',
+  initialRouteName: 'ProfileNavigator',
 
   defaultNavigationOptions: ({navigation}) => ({
     tabBarIcon: ({focused}) => {
       const {routeName} = navigation.state;
 
-      if (routeName === 'ProfileScreen') {
+      if (routeName === 'ProfileNavigator') {
         return (
           <Icon
             name={focused ? 'user' : 'user-o'}
