@@ -18,26 +18,35 @@ import { maxLengthUserName, minLengthUserName } from '../../../../../../shared/v
 
 import { AuthInput } from '../../../../../../shared/services/auth.service';
 import { RootState } from '../../../../../../redux/store';
+import { NavigationInjectedProps } from 'react-navigation';
 
 import navService from '../../../../../../../src/shared/services/nav.service';
 import * as loginAC from '../../../../../../redux/requests/requestsEntities/auth/login/AC';
 import { getIsLoginRequestLoading } from '../../../../../../redux/requests/selectors';
-import { NavigationInjectedProps } from 'react-navigation';
+import { getIsAuthUser } from '../../../../../../redux/auth/selectors';
 
 type LoginFormData = AuthInput;
 
 interface StateProps {
   isLoading: boolean;
+  isAuthUser: boolean;
 }
 
 const mapStateToProps = (state: RootState): StateProps => ({
   isLoading: getIsLoginRequestLoading(state),
+  isAuthUser: getIsAuthUser(state),
 });
 
 type Props = StateProps & InjectedFormProps<LoginFormData> & NavigationInjectedProps;
 
 const LoginScreen: React.FC<Props> = (props) => {
-  const {handleSubmit, isLoading, destroy, navigation} = props;
+  const {handleSubmit, isLoading, destroy, navigation, isAuthUser} = props;
+
+  useEffect(() => {
+    if (isAuthUser) {
+      navService.navigate('ProfileScreen');
+    }
+  }, []);
 
   const onBlur = useCallback(() => {
     destroy();
