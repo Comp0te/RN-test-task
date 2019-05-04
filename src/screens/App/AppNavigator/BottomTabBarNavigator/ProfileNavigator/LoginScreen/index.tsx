@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { compose, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import style from './style';
@@ -22,6 +22,7 @@ import { RootState } from '../../../../../../redux/store';
 import navService from '../../../../../../../src/shared/services/nav.service';
 import * as loginAC from '../../../../../../redux/requests/requestsEntities/auth/login/AC';
 import { getIsLoginRequestLoading } from '../../../../../../redux/requests/selectors';
+import { NavigationInjectedProps } from 'react-navigation';
 
 type LoginFormData = AuthInput;
 
@@ -33,10 +34,20 @@ const mapStateToProps = (state: RootState): StateProps => ({
   isLoading: getIsLoginRequestLoading(state),
 });
 
-type Props = StateProps & InjectedFormProps<LoginFormData>;
+type Props = StateProps & InjectedFormProps<LoginFormData> & NavigationInjectedProps;
 
 const LoginScreen: React.FC<Props> = (props) => {
-  const {handleSubmit, isLoading} = props;
+  const {handleSubmit, isLoading, destroy, navigation} = props;
+
+  const onBlur = useCallback(() => {
+    destroy();
+  }, []);
+
+  useEffect(() => {
+    const focusListener = navigation.addListener('willBlur', onBlur);
+
+    return () => focusListener.remove();
+  }, [onBlur]);
 
   const submitLogin = (values: LoginFormData, dispatch: Dispatch<loginAC.Actions>) => {
     dispatch(loginAC.Actions.login(values));

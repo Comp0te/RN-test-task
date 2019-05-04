@@ -29,7 +29,7 @@ const style = StyleSheet.create({
   },
   singUpWrapper: {
     position: 'absolute',
-    bottom: 10,
+    bottom: 20,
     flexDirection: 'row',
     alignItems: 'center',
   },
