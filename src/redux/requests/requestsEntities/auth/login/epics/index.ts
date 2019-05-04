@@ -14,7 +14,11 @@ export const loginRequestEpic = (
   ),
   switchMap((action) => authService.login(action.payload.data).pipe(
     map(ajaxResponse => {
-      return fromActions.Actions.loginSuccess(ajaxResponse.response);
+      if (ajaxResponse.response.success) {
+        return fromActions.Actions.loginSuccess(ajaxResponse.response);
+      }
+
+      return fromActions.Actions.loginFail(ajaxResponse.response.message);
     }),
     catchError((ajaxError: AjaxError) => {
       return of(fromActions.Actions.loginFail(ajaxError.response));

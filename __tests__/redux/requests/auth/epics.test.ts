@@ -8,7 +8,7 @@ import {
   registerRequestEpic,
 } from '../../../../src/redux/requests/requestsEntities/auth/register/epics';
 import authService from '../../../../src/shared/services/auth.service';
-import { authResponseMock, authInputMock } from '../../../../__mocks__';
+import { authResponseMock, authInputMock, authResponseFailMock } from '../../../../__mocks__';
 import { requestsAC } from '../../../../src/redux/requests/AC';
 
 describe('Auth requests epics', () => {
@@ -17,6 +17,21 @@ describe('Auth requests epics', () => {
       response: authResponseMock,
     };
     const expectedResponse = requestsAC.login.Actions.loginSuccess(ajaxResponse.response);
+    jest
+      .spyOn(authService, 'login')
+      .mockImplementation(() => of(ajaxResponse as AjaxResponse));
+    const action$ = ActionsObservable.of(requestsAC.login.Actions.login(authInputMock));
+
+    loginRequestEpic(action$).subscribe((output: any) => {
+      expect(output).toEqual(expectedResponse);
+    });
+  });
+
+  it('should dispatch correct action when LOGIN_REQUEST fail', () => {
+    const ajaxResponse: Partial<AjaxResponse> = {
+      response: authResponseFailMock,
+    };
+    const expectedResponse = requestsAC.login.Actions.loginFail(ajaxResponse.response.message);
     jest
       .spyOn(authService, 'login')
       .mockImplementation(() => of(ajaxResponse as AjaxResponse));

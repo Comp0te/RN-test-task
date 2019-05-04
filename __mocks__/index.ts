@@ -14,6 +14,11 @@ export const authResponseMock: AuthResponse = {
   token: 'token',
 };
 
+export const authResponseFailMock = {
+  success: false,
+  message: 'Ooops',
+};
+
 export const productMock: ProductModel = {
   id: 1,
   img: 'img',
