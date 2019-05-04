@@ -4,6 +4,7 @@ export const mainColor = '#860483';
 export const whiteColor = '#FFFFFF';
 export const blackColor = '#000000';
 export const greyColor = '#BEBEBE';
+export const errorColor = '#DF2336';
 
 export const headerTitleStyle: TextStyle = {
   fontWeight: '700',
