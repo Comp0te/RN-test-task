@@ -27,6 +27,7 @@ export const CommonButton: React.FC<Props> = (props) => {
     <Button
       background={TouchableNativeFeedback.Ripple(greyColor)}
       buttonStyle={style.button}
+      disabledStyle={style.disabled}
       {...rest}
       icon={iconName ? getIcon(iconName) : undefined}
     />
