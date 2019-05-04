@@ -14,7 +14,11 @@ export const registerRequestEpic = (
   ),
   switchMap((action) => authService.register(action.payload.data).pipe(
     map(ajaxResponse => {
-      return fromActions.Actions.registerSuccess(ajaxResponse.response);
+      if (ajaxResponse.response.success) {
+        return fromActions.Actions.registerSuccess(ajaxResponse.response);
+      }
+
+      return fromActions.Actions.registerFail(ajaxResponse.response.message);
     }),
     catchError((ajaxError: AjaxError) => {
       return of(fromActions.Actions.registerFail(ajaxError.response));

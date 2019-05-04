@@ -76,6 +76,22 @@ describe('Auth requests epics', () => {
     });
   });
 
+  it('should dispatch correct action when REGISTER_REQUEST fail', done => {
+    const ajaxResponse: Partial<AjaxResponse> = {
+      response: authResponseFailMock,
+    };
+    const expectedResponse = requestsAC.register.Actions.registerFail(ajaxResponse.response.message);
+    jest
+      .spyOn(authService, 'register')
+      .mockImplementation(() => of(ajaxResponse as AjaxResponse));
+    const action$ = ActionsObservable.of(requestsAC.register.Actions.register(authInputMock));
+
+    registerRequestEpic(action$).subscribe((output: any) => {
+      expect(output).toEqual(expectedResponse);
+      done();
+    });
+  });
+
   it('should dispatch correct action when REGISTER_REQUEST error', done => {
     const ajaxError: Partial<AjaxError> = {
       response: 'error',
