@@ -9,7 +9,7 @@ import { productMock } from '../../../../__mocks__';
 import { requestsAC } from '../../../../src/redux/requests/AC';
 
 describe('Products request epics', () => {
-  it('should dispatch correct action when PRODUCTS_GET_ALL_REQUEST successful', () => {
+  it('should dispatch correct action when PRODUCTS_GET_ALL_REQUEST successful', done => {
     const ajaxResponse: Partial<AjaxResponse> = {
       response: [productMock],
     };
@@ -21,10 +21,11 @@ describe('Products request epics', () => {
 
     getAllProductsRequestEpic(action$).subscribe((output: any) => {
       expect(output).toEqual(expectedResponse);
+      done();
     });
   });
 
-  it('should dispatch correct action when PRODUCTS_GET_ALL_REQUEST error', () => {
+  it('should dispatch correct action when PRODUCTS_GET_ALL_REQUEST error', done => {
     const ajaxError: Partial<AjaxError> = {
       response: 'error',
     };
@@ -36,6 +37,7 @@ describe('Products request epics', () => {
 
     getAllProductsRequestEpic(action$).subscribe((output: any) => {
       expect(output).toEqual(expectedResponse);
+      done();
     });
   });
 });

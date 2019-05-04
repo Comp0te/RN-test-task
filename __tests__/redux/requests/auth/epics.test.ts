@@ -12,7 +12,7 @@ import { authResponseMock, authInputMock, authResponseFailMock } from '../../../
 import { requestsAC } from '../../../../src/redux/requests/AC';
 
 describe('Auth requests epics', () => {
-  it('should dispatch correct action when LOGIN_REQUEST successful', () => {
+  it('should dispatch correct action when LOGIN_REQUEST successful', done => {
     const ajaxResponse: Partial<AjaxResponse> = {
       response: authResponseMock,
     };
@@ -24,10 +24,11 @@ describe('Auth requests epics', () => {
 
     loginRequestEpic(action$).subscribe((output: any) => {
       expect(output).toEqual(expectedResponse);
+      done();
     });
   });
 
-  it('should dispatch correct action when LOGIN_REQUEST fail', () => {
+  it('should dispatch correct action when LOGIN_REQUEST fail', done => {
     const ajaxResponse: Partial<AjaxResponse> = {
       response: authResponseFailMock,
     };
@@ -39,10 +40,11 @@ describe('Auth requests epics', () => {
 
     loginRequestEpic(action$).subscribe((output: any) => {
       expect(output).toEqual(expectedResponse);
+      done();
     });
   });
 
-  it('should dispatch correct action when LOGIN_REQUEST error', () => {
+  it('should dispatch correct action when LOGIN_REQUEST error', done => {
     const ajaxError: Partial<AjaxError> = {
       response: 'error',
     };
@@ -54,10 +56,11 @@ describe('Auth requests epics', () => {
 
     loginRequestEpic(action$).subscribe((output: any) => {
       expect(output).toEqual(expectedResponse);
+      done();
     });
   });
 
-  it('should dispatch correct action when REGISTER_REQUEST successful', () => {
+  it('should dispatch correct action when REGISTER_REQUEST successful', done => {
     const ajaxResponse: Partial<AjaxResponse> = {
       response: authResponseMock,
     };
@@ -69,10 +72,11 @@ describe('Auth requests epics', () => {
 
     registerRequestEpic(action$).subscribe((output: any) => {
       expect(output).toEqual(expectedResponse);
+      done();
     });
   });
 
-  it('should dispatch correct action when REGISTER_REQUEST error', () => {
+  it('should dispatch correct action when REGISTER_REQUEST error', done => {
     const ajaxError: Partial<AjaxError> = {
       response: 'error',
     };
@@ -84,6 +88,7 @@ describe('Auth requests epics', () => {
 
     registerRequestEpic(action$).subscribe((output: any) => {
       expect(output).toEqual(expectedResponse);
+      done();
     });
   });
 });

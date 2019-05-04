@@ -12,7 +12,7 @@ import { reviewResponseMock, reviewPostInputMock } from '../../../../__mocks__';
 import { requestsAC } from '../../../../src/redux/requests/AC';
 
 describe('Reviews requests epics', () => {
-  it('should dispatch correct action when REVIEWS_GET_ALL_REQUEST successful', () => {
+  it('should dispatch correct action when REVIEWS_GET_ALL_REQUEST successful', done => {
     const ajaxResponse: Partial<AjaxResponse> = {
       response: [reviewResponseMock],
     };
@@ -24,10 +24,11 @@ describe('Reviews requests epics', () => {
 
     getAllReviewsRequestEpic(action$).subscribe((output: any) => {
       expect(output).toEqual(expectedResponse);
+      done();
     });
   });
 
-  it('should dispatch correct action when REVIEWS_GET_ALL_REQUEST error', () => {
+  it('should dispatch correct action when REVIEWS_GET_ALL_REQUEST error', done => {
     const ajaxError: Partial<AjaxError> = {
       response: 'error',
     };
@@ -39,10 +40,11 @@ describe('Reviews requests epics', () => {
 
     getAllReviewsRequestEpic(action$).subscribe((output: any) => {
       expect(output).toEqual(expectedResponse);
+      done();
     });
   });
 
-  it('should dispatch correct action when REVIEW_POST_REQUEST successful', () => {
+  it('should dispatch correct action when REVIEW_POST_REQUEST successful', done => {
     const ajaxResponse: Partial<AjaxResponse> = {
       response: reviewResponseMock,
     };
@@ -54,10 +56,11 @@ describe('Reviews requests epics', () => {
 
     postReviewRequestEpic(action$).subscribe((output: any) => {
       expect(output).toEqual(expectedResponse);
+      done();
     });
   });
 
-  it('should dispatch correct action when REVIEW_POST_REQUEST error', () => {
+  it('should dispatch correct action when REVIEW_POST_REQUEST error', done => {
     const ajaxError: Partial<AjaxError> = {
       response: 'error',
     };
@@ -69,6 +72,7 @@ describe('Reviews requests epics', () => {
 
     postReviewRequestEpic(action$).subscribe((output: any) => {
       expect(output).toEqual(expectedResponse);
+      done();
     });
   });
 });

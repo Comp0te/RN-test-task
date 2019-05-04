@@ -8,12 +8,13 @@ import { productMock } from '../../../__mocks__';
 
 describe('Products epics', () => {
 
-  it('should dispatch correct action when PRODUCTS_GET_ALL_REQUEST successful', () => {
+  it('should dispatch correct action when PRODUCTS_GET_ALL_REQUEST successful', done => {
     const expectedResponse = productsAC.Actions.setProductsData([productMock]);
     const action$ = ActionsObservable.of(requestsAC.getAllProducts.Actions.getAllProductsSuccess([productMock]));
 
     setProductsDataEpic(action$).subscribe((output: any) => {
       expect(output).toEqual(expectedResponse);
+      done();
     });
   });
 

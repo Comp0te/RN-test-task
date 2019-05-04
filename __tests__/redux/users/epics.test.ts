@@ -8,7 +8,7 @@ import { reviewResponseMock } from '../../../__mocks__';
 
 describe('Users epics', () => {
 
-  it('should dispatch correct action when REVIEWS_GET_ALL_REQUEST successful', () => {
+  it('should dispatch correct action when REVIEWS_GET_ALL_REQUEST successful', done => {
     const expectedResponse = usersAC.Actions.setUsersDataFromReviews([reviewResponseMock]);
     const action$ = ActionsObservable.of(
       requestsAC.getAllReviews.Actions.getAllReviewsSuccess([reviewResponseMock]),
@@ -16,6 +16,7 @@ describe('Users epics', () => {
 
     setUsersDataFromReviewsEpic(action$).subscribe((output: any) => {
       expect(output).toEqual(expectedResponse);
+      done();
     });
   });
 
