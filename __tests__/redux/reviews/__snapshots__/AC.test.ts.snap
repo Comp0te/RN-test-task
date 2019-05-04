@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux reviews actions creates a SET_REVIEWS_DATA action 1`] = `
+Object {
+  "payload": Object {
+    "data": Array [
+      Object {
+        "created_by": Object {
+          "id": 1,
+          "username": "bla-bla",
+        },
+        "id": 1,
+        "product": 1,
+        "rate": 5,
+        "text": "text",
+      },
+      Object {
+        "created_by": Object {
+          "id": 1,
+          "username": "bla-bla",
+        },
+        "id": 1,
+        "product": 1,
+        "rate": 5,
+        "text": "text",
+      },
+    ],
+  },
+  "type": "SET_REVIEWS_DATA",
+}
+`;
