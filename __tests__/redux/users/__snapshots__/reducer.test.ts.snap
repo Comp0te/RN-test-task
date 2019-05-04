@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux users reducers update state after SET_USERS_DATA_FROM_REVIEWS action 1`] = `
+Object {
+  "allIds": Array [
+    "1",
+  ],
+  "entities": Object {
+    "1": UserModel {
+      "id": 1,
+      "username": "bla-bla",
+    },
+  },
+}
+`;
