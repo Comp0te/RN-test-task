@@ -7,6 +7,7 @@ import { authReducer } from './auth/reducers';
 import { productsReducer } from './products/reducers';
 import { reviewsReducer } from './reviews/reducers';
 import { usersReducer } from './users/reducers';
+import { reducer as formReducer } from 'redux-form';
 
 import { requestsEpics } from './requests/epics';
 import { authEpics } from './auth/epics';
@@ -20,6 +21,7 @@ export const rootReducer = combineReducers({
   products: productsReducer,
   reviews: reviewsReducer,
   users: usersReducer,
+  form: formReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
