@@ -1,5 +1,6 @@
 import React from 'react';
 import { Input, InputProps } from 'react-native-elements';
+import { View } from 'react-native';
 import { WrappedFieldProps } from 'redux-form';
 import style from './style';
 import { greyColor, mainColor } from '../../../app.style';
@@ -25,22 +26,24 @@ export const FieldInput: React.FC<Props> = (props) => {
   });
 
   return (
-    <Input
-      {...restInput}
-      {...rest}
-      onChangeText={onChange}
-      onFocus={onFocus as any}
-      placeholderTextColor={greyColor}
-      errorStyle={style.errorStyle}
-      leftIconContainerStyle={style.leftIconContainerStyle}
-      errorMessage={!active && touched ? error : undefined}
-      leftIcon={
-        leftIconName ?
-          getIcon(leftIconName) :
-          undefined
-      }
-      inputStyle={style.inputText}
-    />
+    <View style={style.root}>
+      <Input
+        {...restInput}
+        {...rest}
+        onChangeText={onChange}
+        onFocus={onFocus as any}
+        placeholderTextColor={greyColor}
+        errorStyle={style.errorStyle}
+        leftIconContainerStyle={style.leftIconContainerStyle}
+        errorMessage={!active && touched ? error : undefined}
+        leftIcon={
+          leftIconName ?
+            getIcon(leftIconName) :
+            undefined
+        }
+        inputStyle={style.inputText}
+      />
+    </View>
   );
 };
 
