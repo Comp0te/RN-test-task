@@ -5,7 +5,7 @@ const style = StyleSheet.create({
   root: {
     justifyContent: 'flex-start',
     width: '100%',
-    height: 70,
+    minHeight: 70,
     paddingBottom: 5,
   },
   inputText: {
