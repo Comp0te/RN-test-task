@@ -10,7 +10,7 @@ export const errorColor = '#DF2336';
 export const headerTitleStyle: TextStyle = {
   fontWeight: '700',
   fontSize: 16,
-  color: blackColor,
+  color: mainColor,
   alignSelf: 'center',
 };
 
