@@ -42,7 +42,7 @@ const ProductsItem: React.FC<Props> = (props) => {
       productTitle: product ? product.title : '',
     };
 
-    navService.navigate('ProductDetail', params);
+    navService.navigate('ProductDetailScreen', params);
   }, [productId]);
 
   if (!product) {
