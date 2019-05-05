@@ -5,7 +5,7 @@ import { staticEndpoint } from '../../constants/apiEndpoint';
 import { mainColor } from '../../../app.style';
 
 import { ListItem, Image, Icon } from 'react-native-elements';
-import { ActivityIndicator } from 'react-native';
+import { Spinner } from '../Spinner';
 
 import { RootState } from '../../../redux/store';
 import { ProductModel } from '../../models/product.model';
@@ -53,15 +53,12 @@ const ProductsItem: React.FC<Props> = (props) => {
 
   const leftElement = (
     <Image
-      source={{uri: imageUri}}
+      source={{
+        uri: imageUri,
+        cache: 'default',
+      }}
       style={style.image}
-      PlaceholderContent={
-        <ActivityIndicator
-          size='small'
-          color={mainColor}
-          animating={true}
-        />
-      }
+      PlaceholderContent={<Spinner size='small'/>}
       placeholderStyle={style.placeholderStyle}
     />
   );
