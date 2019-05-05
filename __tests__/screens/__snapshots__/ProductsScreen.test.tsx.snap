@@ -1,0 +1,262 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductsScreen renders correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+        "paddingLeft": 20,
+        "paddingRight": 20,
+        "paddingTop": 49,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "width": "100%",
+        }
+      }
+    >
+      <RCTScrollView
+        ListHeaderComponent={
+          <Memo(CommonSearchBar)
+            onChangeText={[Function]}
+            placeholder="Search by product name"
+            value=""
+          />
+        }
+        contentContainerStyle={
+          Object {
+            "flex": 1,
+          }
+        }
+        data={Array []}
+        disableVirtualization={false}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        getItemLayout={[Function]}
+        horizontal={false}
+        initialNumToRender={10}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={2}
+        numColumns={1}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onRefresh={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        refreshControl={
+          <RefreshControlMock
+            onRefresh={[Function]}
+            refreshing={false}
+          />
+        }
+        refreshing={false}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        scrollEventThrottle={50}
+        stickyHeaderIndices={Array []}
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <RCTRefreshControl />
+        <View>
+          <View
+            onLayout={[Function]}
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderBottomColor": "#000",
+                  "borderBottomWidth": 0,
+                  "borderTopColor": "#000",
+                  "borderTopWidth": 0,
+                  "padding": 8,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "paddingHorizontal": 0,
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#FFFFFF",
+                      "borderBottomWidth": 1,
+                      "borderColor": "#860483",
+                      "borderRadius": 15,
+                      "borderWidth": 1,
+                      "flexDirection": "row",
+                      "minHeight": 30,
+                      "overflow": "hidden",
+                      "transform": Array [
+                        Object {
+                          "translateX": 0,
+                        },
+                      ],
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "height": 40,
+                        "justifyContent": "center",
+                        "marginLeft": 8,
+                      }
+                    }
+                  >
+                    <View>
+                      <View
+                        style={
+                          Object {
+                            "alignItems": "center",
+                            "backgroundColor": "transparent",
+                            "justifyContent": "center",
+                          }
+                        }
+                        theme={
+                          Object {
+                            "colors": Object {
+                              "disabled": "hsl(208, 8%, 90%)",
+                              "divider": "#bcbbc1",
+                              "error": "#ff190c",
+                              "grey0": "#393e42",
+                              "grey1": "#43484d",
+                              "grey2": "#5e6977",
+                              "grey3": "#86939e",
+                              "grey4": "#bdc6cf",
+                              "grey5": "#e1e8ee",
+                              "greyOutline": "#bbb",
+                              "platform": Object {
+                                "android": Object {
+                                  "error": "#f44336",
+                                  "primary": "#2196f3",
+                                  "secondary": "#9C27B0",
+                                  "success": "#4caf50",
+                                  "warning": "#ffeb3b",
+                                },
+                                "ios": Object {
+                                  "error": "#ff3b30",
+                                  "primary": "#007aff",
+                                  "secondary": "#5856d6",
+                                  "success": "#4cd964",
+                                  "warning": "#ffcc00",
+                                },
+                              },
+                              "primary": "#2089dc",
+                              "searchBg": "#303337",
+                              "secondary": "#8F0CE8",
+                              "success": "#52c41a",
+                              "warning": "#faad14",
+                            },
+                          }
+                        }
+                        underlayColor="white"
+                      >
+                        <Text
+                          allowFontScaling={false}
+                          style={
+                            Array [
+                              Object {
+                                "color": "#86939e",
+                                "fontSize": 18,
+                              },
+                              Object {
+                                "backgroundColor": "transparent",
+                              },
+                              Object {
+                                "fontFamily": "Material Icons",
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              },
+                              Object {},
+                            ]
+                          }
+                          testID="iconIcon"
+                        >
+                          
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                  <TextInput
+                    allowFontScaling={true}
+                    onBlur={[Function]}
+                    onChangeText={[Function]}
+                    onClear={[Function]}
+                    onFocus={[Function]}
+                    placeholder="Search by product name"
+                    placeholderTextColor="#86939e"
+                    platform="default"
+                    rejectResponderTermination={true}
+                    style={
+                      Object {
+                        "alignSelf": "center",
+                        "borderWidth": 0,
+                        "color": "#860483",
+                        "flex": 1,
+                        "fontSize": 14,
+                        "fontWeight": "400",
+                        "marginLeft": 10,
+                        "minHeight": 40,
+                        "paddingRight": 25,
+                        "width": "100%",
+                      }
+                    }
+                    testID="searchInput"
+                    underlineColorAndroid="transparent"
+                    value=""
+                  />
+                  <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "height": 40,
+                        "justifyContent": "center",
+                        "marginLeft": 15,
+                        "marginRight": 8,
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        Object {
+                          "flexDirection": "row",
+                        }
+                      }
+                    />
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;
