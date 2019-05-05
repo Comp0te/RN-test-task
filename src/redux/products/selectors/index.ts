@@ -1,6 +1,7 @@
 import { RootState } from '../../store';
 import { createSelector } from 'reselect';
-import { OwnProps as ProductItemProps } from '../../../shared/components/ProductItem';
+import { OwnProps as ProductItemProps, ProductDetailNavParams } from '../../../shared/components/ProductItem';
+import { NavigationInjectedProps } from 'react-navigation';
 
 export const getProductsEntities = (state: RootState) => state.products.entities;
 export const getProductsAllIds = (state: RootState) => state.products.allIds;
@@ -11,10 +12,25 @@ export const getProductIdFromProps = (
   props: ProductItemProps,
 ) => props.productId;
 
+export const getProductIdFromNavProps = (
+  state: RootState,
+  props: NavigationInjectedProps<ProductDetailNavParams>,
+) => props.navigation.getParam('productId', '');
+
 export const getProductByIdFromProps = createSelector(
   [
     getProductsEntities,
     getProductIdFromProps,
+  ],
+  (productsEntities, productId) => {
+    return productId ? productsEntities[productId] : undefined;
+  },
+);
+
+export const getProductByIdFromNavProps = createSelector(
+  [
+    getProductsEntities,
+    getProductIdFromNavProps,
   ],
   (productsEntities, productId) => {
     return productId ? productsEntities[productId] : undefined;
