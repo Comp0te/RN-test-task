@@ -5,13 +5,13 @@ import { greyColor, mainColor } from '../../../../app.style';
 import { Icon } from 'react-native-elements';
 import { createBottomTabNavigator } from 'react-navigation';
 
-import ProfileScreen from './ProfileScreen';
+import ProductsNavigator from './ProductsNavigator';
 import ProfileNavigator from './ProfileNavigator';
 import navService from '../../../../shared/services/nav.service';
 
 export default createBottomTabNavigator({
-  ProductsScreen: {
-    screen: ProfileScreen,
+  ProductsNavigator: {
+    screen: ProductsNavigator,
     navigationOptions: navService.navigationOptions('Products'),
   },
   ProfileNavigator: {

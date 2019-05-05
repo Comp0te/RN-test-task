@@ -15,8 +15,11 @@ const SplashScreen: React.FC<Props> = ({dispatch}) => {
 
   useEffect(() => {
     const subscriber = authService.getToken().subscribe(token => {
-      dispatch(authAC.Actions.setIsAuthUser(true));
-      navService.navigate(token ? 'ProductsScreen' : 'ProfileNavigator');
+      if (token) {
+        dispatch(authAC.Actions.setIsAuthUser(true));
+      }
+
+      navService.navigate(token ? 'ProductsNavigator' : 'ProfileNavigator');
       subscriber.unsubscribe();
     });
   }, []);
