@@ -3,10 +3,13 @@ import { whiteColor } from '../../../../app.style';
 
 const style = StyleSheet.create({
   tabStyle: {
-    height: 40,
+    height: 50,
+  },
+  labelStyle: {
+    fontSize: 14,
   },
   style: {
-    height: 40,
+    height: 50,
     backgroundColor: whiteColor,
     ...Platform.select({
       ios: {

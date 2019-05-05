@@ -12,14 +12,17 @@ import navService from '../../../../shared/services/nav.service';
 export default createBottomTabNavigator({
   ProductsScreen: {
     screen: ProfileScreen,
-    navigationOptions: navService.navigationOptions('products'),
+    navigationOptions: navService.navigationOptions('Products'),
   },
-  ProfileNavigator,
+  ProfileNavigator: {
+    screen: ProfileNavigator,
+    navigationOptions: navService.navigationOptions('Profile'),
+  },
 }, {
   initialRouteName: 'ProfileNavigator',
 
   defaultNavigationOptions: ({navigation}) => ({
-    tabBarIcon: ({focused}) => {
+    tabBarIcon: ({focused, tintColor}) => {
       const {routeName} = navigation.state;
 
       if (routeName === 'ProfileNavigator') {
@@ -28,7 +31,7 @@ export default createBottomTabNavigator({
             name={focused ? 'user' : 'user-o'}
             type='font-awesome'
             size={22}
-            color={focused ? mainColor : greyColor}
+            color={tintColor ? tintColor : undefined}
           />
         );
       } else {
@@ -37,14 +40,17 @@ export default createBottomTabNavigator({
             name={focused ? 'star' : 'star-o'}
             type='font-awesome'
             size={22}
-            color={focused ? mainColor : greyColor}
+            color={tintColor ? tintColor : undefined}
           />
         );
       }
     },
   }),
   tabBarOptions: {
-    showLabel: false,
+    showLabel: true,
+    activeTintColor: mainColor,
+    inactiveTintColor: greyColor,
+    labelStyle: style.labelStyle,
     tabStyle: style.tabStyle,
     style: style.style,
   },
