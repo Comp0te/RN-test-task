@@ -28,7 +28,7 @@ class ReviewsService implements IReviewsService {
 
     return authService.getToken().pipe(
       switchMap((token) => ajax.post(
-        apiEndpoint + `reviews/${input.product_id}/`,
+        apiEndpoint + `reviews/${input.product_id}`,
         JSON.stringify(body),
         {
           'Content-Type': 'application/json; charset=utf-8',
@@ -40,7 +40,7 @@ class ReviewsService implements IReviewsService {
 
   getAllReviews(product_id: string) {
     return ajax.get(
-      apiEndpoint + `reviews/${product_id}/`,
+      apiEndpoint + `reviews/${product_id}`,
       {
         'Content-Type': 'application/json; charset=utf-8',
       },
