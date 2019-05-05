@@ -13,5 +13,14 @@ Object {
       "title": "title",
     },
   },
+  "searchQuery": "",
+}
+`;
+
+exports[`Redux products reducers update state after SET_SEARCH_QUERY action 1`] = `
+Object {
+  "allIds": Array [],
+  "entities": Object {},
+  "searchQuery": "title",
 }
 `;

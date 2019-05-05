@@ -6,6 +6,7 @@ import { getNewEntitiesAfterSetData } from '../../../shared/helpers/utilsForRedu
 export const initialState: ProductsState = {
   entities: {},
   allIds: [],
+  searchQuery: '',
 };
 
 export function productsReducer(state = initialState, action: fromActions.Actions): ProductsState {
@@ -23,6 +24,13 @@ export function productsReducer(state = initialState, action: fromActions.Action
         ...state,
         entities: newEntities,
         allIds: Object.keys(newEntities),
+      };
+    }
+
+    case fromActions.ActionTypes.SET_SEARCH_QUERY: {
+      return {
+        ...state,
+        searchQuery: action.payload.data,
       };
     }
 

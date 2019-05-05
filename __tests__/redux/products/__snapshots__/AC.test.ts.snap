@@ -21,3 +21,12 @@ Object {
   "type": "SET_PRODUCTS_DATA",
 }
 `;
+
+exports[`Redux products actions creates a SET_SEARCH_QUERY action 1`] = `
+Object {
+  "payload": Object {
+    "data": "title",
+  },
+  "type": "SET_SEARCH_QUERY",
+}
+`;

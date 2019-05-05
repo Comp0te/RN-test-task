@@ -12,4 +12,11 @@ describe('Redux products reducers', () => {
       Actions.setProductsData([productMock, productMock])),
     ).toMatchSnapshot();
   });
+
+  it(`update state after ${ActionTypes.SET_SEARCH_QUERY} action`, () => {
+    expect(productsReducer(
+      productsInitialState,
+      Actions.setSearchQuery('title')),
+    ).toMatchSnapshot();
+  });
 });
