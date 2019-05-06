@@ -1,6 +1,7 @@
 import { Dimensions, TextStyle, ViewStyle } from 'react-native';
 
 export const mainColor = '#860483';
+export const starColor = '#F1C40F';
 export const mainColorOpacity = 'rgba(134, 4, 131, 0.3)';
 export const whiteColor = '#FFFFFF';
 export const blackColor = '#000000';
