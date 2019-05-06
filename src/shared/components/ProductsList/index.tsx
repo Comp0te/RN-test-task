@@ -32,16 +32,13 @@ const ProductsList: React.FC<Props> = (props) => {
     {length: 78, offset: 0.3, index}
   );
 
-  const ListHeaderComponent = (
-    <CommonSearchBar
-      placeholder='Search by product name'
-      onChangeText={onSearchProducts}
-      value={searchQuery}
-    />
-  );
-
   return (
     <View style={style.root}>
+      <CommonSearchBar
+        placeholder='Search by product name'
+        onChangeText={onSearchProducts}
+        value={searchQuery}
+      />
       <FlatList
         data={productsIds}
         keyExtractor={keyExtractor}
@@ -51,8 +48,6 @@ const ProductsList: React.FC<Props> = (props) => {
         initialNumToRender={10}
         maxToRenderPerBatch={2}
         getItemLayout={getItemLayout}
-        ListHeaderComponent={ListHeaderComponent}
-        contentContainerStyle={style.flatList}
       />
     </View>
   );
