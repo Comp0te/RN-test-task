@@ -1,7 +1,7 @@
 import { AuthInput } from '../src/shared/services/auth.service';
 import { AuthResponse } from '../src/redux/requests/types';
 import { ProductModel } from '../src/shared/models/product.model';
-import { ReviewResponse } from '../src/shared/models/review.model';
+import { ReviewModel, ReviewResponse } from '../src/shared/models/review.model';
 import { IReviewPostInput } from '../src/shared/services/reviews.service';
 
 export const authInputMock: AuthInput = {
@@ -41,4 +41,12 @@ export const reviewPostInputMock: IReviewPostInput = {
   text: 'text',
   rate: 2,
   product_id: 'id',
+};
+
+export const reviewMock: ReviewModel = {
+  id: 1,
+  userId: 1,
+  product: 1,
+  text: 'text',
+  rate: 5,
 };
