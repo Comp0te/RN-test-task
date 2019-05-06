@@ -19,7 +19,7 @@ export const SplashScreen: React.FC<Props> = ({dispatch}) => {
         dispatch(authAC.Actions.setIsAuthUser(true));
       }
 
-      navService.navigate(token ? 'ProductsNavigator' : 'ProfileNavigator');
+      navService.navigate(token ? 'MainNavigator' : 'AuthNavigator');
       subscriber.unsubscribe();
     });
   }, []);

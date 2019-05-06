@@ -45,7 +45,7 @@ const redirectToProfileScreenEpic = (action$: Observable<Action>) => action$.pip
     requestsAC.login.ActionTypes.LOGIN_REQUEST_SUCCESS,
     requestsAC.register.ActionTypes.REGISTER_REQUEST_SUCCESS,
   ),
-  tap(() => navService.navigate('ProfileScreen')),
+  tap(() => navService.navigate('ProductsScreen')),
   ignoreElements(),
 );
 

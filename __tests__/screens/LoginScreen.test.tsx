@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 
 import renderer from 'react-test-renderer';
-import LoginScreen from '../../src/screens/App/AppNavigator/BottomTabBarNavigator/ProfileNavigator/LoginScreen';
+import LoginScreen from '../../src/screens/App/AppNavigator/AuthNavigator/LoginScreen';
 import { Provider } from 'react-redux';
 import store from '../../src/redux/store';
 

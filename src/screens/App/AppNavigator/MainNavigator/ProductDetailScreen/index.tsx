@@ -1,27 +1,27 @@
 import React, { useCallback, useEffect } from 'react';
 import { connect } from 'react-redux';
 import style from './style';
-import { staticEndpoint } from '../../../../../../shared/constants/apiEndpoint';
+import { staticEndpoint } from '../../../../../shared/constants/apiEndpoint';
 
 import { SafeAreaView, View, Text, ScrollView } from 'react-native';
 import { Image, Divider } from 'react-native-elements';
-import Spinner from '../../../../../../shared/components/Spinner';
-import ReviewsList from '../../../../../../shared/components/ReviewsList';
+import Spinner from '../../../../../shared/components/Spinner';
+import ReviewsList from '../../../../../shared/components/ReviewsList';
 
 import { Dispatch } from 'redux';
-import { RootState } from '../../../../../../redux/store';
-import { IReviewPostInput } from '../../../../../../shared/services/reviews.service';
+import { RootState } from '../../../../../redux/store';
+import { IReviewPostInput } from '../../../../../shared/services/reviews.service';
 import { NavigationInjectedProps } from 'react-navigation';
-import { ProductDetailNavParams } from '../../../../../../shared/components/ProductItem';
-import { ProductModel } from '../../../../../../shared/models/product.model';
+import { ProductDetailNavParams } from '../../../../../shared/components/ProductItem';
+import { ProductModel } from '../../../../../shared/models/product.model';
 
-import { getIsGetAllReviewsRequestLoading } from '../../../../../../redux/requests/requestsEntities/reviews/getAll/selectors';
-import { getReviewsAllIds, getAverageReviewRateOfProduct } from '../../../../../../redux/reviews/selectors';
-import { getIsAuthUser } from '../../../../../../redux/auth/selectors';
-import { getProductByIdFromNavProps } from '../../../../../../redux/products/selectors';
-import { requestsAC } from '../../../../../../redux/requests/AC';
-import { AverageRate } from '../../../../../../shared/components/AverageRate';
-import { useIsFirstLoading } from '../../../../../../shared/hooks/useIsFirstLoading';
+import { getIsGetAllReviewsRequestLoading } from '../../../../../redux/requests/requestsEntities/reviews/getAll/selectors';
+import { getReviewsAllIds, getAverageReviewRateOfProduct } from '../../../../../redux/reviews/selectors';
+import { getIsAuthUser } from '../../../../../redux/auth/selectors';
+import { getProductByIdFromNavProps } from '../../../../../redux/products/selectors';
+import { requestsAC } from '../../../../../redux/requests/AC';
+import { AverageRate } from '../../../../../shared/components/AverageRate';
+import { useIsFirstLoading } from '../../../../../shared/hooks/useIsFirstLoading';
 
 interface StateProps {
   isLoadingReviews: boolean;

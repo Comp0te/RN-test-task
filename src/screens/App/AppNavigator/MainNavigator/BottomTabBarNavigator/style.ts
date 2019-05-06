@@ -1,5 +1,5 @@
 import { StyleSheet, Platform } from 'react-native';
-import { whiteColor } from '../../../../app.style';
+import { whiteColor } from '../../../../../app.style';
 
 const style = StyleSheet.create({
   tabStyle: {

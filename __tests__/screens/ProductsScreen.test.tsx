@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 
 import renderer from 'react-test-renderer';
-import ProductsScreen from '../../src/screens/App/AppNavigator/BottomTabBarNavigator/ProductsNavigator/ProductsScreen';
+import ProductsScreen from '../../src/screens/App/AppNavigator/MainNavigator/BottomTabBarNavigator/ProductsScreen';
 import { Provider } from 'react-redux';
 import store from '../../src/redux/store';
 

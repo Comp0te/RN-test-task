@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import ProfileScreen from '../../src/screens/App/AppNavigator/BottomTabBarNavigator/ProfileNavigator/ProfileScreen';
+import ProfileScreen from '../../src/screens/App/AppNavigator/MainNavigator/BottomTabBarNavigator/ProfileScreen';
 import { Provider } from 'react-redux';
 import store from '../../src/redux/store';
 

@@ -1,16 +1,18 @@
 import React from 'react';
 import { createStackNavigator, NavigationScreenProps } from 'react-navigation';
-import { ProductDetailNavParams } from '../../../../../shared/components/ProductItem';
 
-import navService from '../../../../../shared/services/nav.service';
+import navService from '../../../../shared/services/nav.service';
+import { ProductDetailNavParams } from '../../../../shared/components/ProductItem';
 
-import ProductsScreen from './ProductsScreen';
+import BottomTabBarNavigator from './BottomTabBarNavigator';
 import ProductDetailScreen from './ProductDetailScreen';
 
 export default createStackNavigator({
-    ProductsScreen: {
-      screen: ProductsScreen,
-      navigationOptions: navService.navigationOptions('Products'),
+    BottomTabBarNavigator: {
+      screen: BottomTabBarNavigator,
+      navigationOptions: {
+        header: null,
+      },
     },
     ProductDetailScreen: {
       screen: ProductDetailScreen,
@@ -21,6 +23,6 @@ export default createStackNavigator({
     },
   }
   , {
-    initialRouteName: 'ProductsScreen',
+    initialRouteName: 'BottomTabBarNavigator',
     headerBackTitleVisible: false,
   });

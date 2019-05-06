@@ -1,13 +1,12 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
+import { createSwitchNavigator } from 'react-navigation';
 
-import navService from '../../../../../shared/services/nav.service';
+import navService from '../../../../shared/services/nav.service';
 
 import LoginScreen from './LoginScreen';
 import RegistrationScreen from './RegistrationScreen';
-import ProfileScreen from './ProfileScreen';
 
-export default createStackNavigator({
+export default createSwitchNavigator({
     LoginScreen: {
       screen: LoginScreen,
       navigationOptions: navService.navigationOptions('Sing In'),
@@ -19,15 +18,7 @@ export default createStackNavigator({
         headerLeft: null,
       },
     },
-    ProfileScreen: {
-      screen: ProfileScreen,
-      navigationOptions: {
-        ...navService.navigationOptions('Profile'),
-        headerLeft: null,
-      },
-    },
   }
   , {
     initialRouteName: 'LoginScreen',
-    headerBackTitleVisible: false,
   });

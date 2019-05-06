@@ -1,6 +1,6 @@
 import {
   RegisterFormData,
-} from '../../screens/App/AppNavigator/BottomTabBarNavigator/ProfileNavigator/RegistrationScreen';
+} from '../../screens/App/AppNavigator/AuthNavigator/RegistrationScreen';
 
 const regExpPassword = new RegExp([
   '^(?=.*[0-9])',

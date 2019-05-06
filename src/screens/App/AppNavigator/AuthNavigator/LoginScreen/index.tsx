@@ -8,22 +8,22 @@ import {
   KeyboardAvoidingView, ScrollView,
 } from 'react-native';
 import { Field, InjectedFormProps, reduxForm } from 'redux-form';
-import FieldInput from '../../../../../../shared/components/FieldInput';
-import CommonButton from '../../../../../../shared/components/CommonButton';
+import FieldInput from '../../../../../shared/components/FieldInput';
+import CommonButton from '../../../../../shared/components/CommonButton';
 
-import required from '../../../../../../shared/validators/required';
-import { passwordLogin } from '../../../../../../shared/validators/password';
-import { userNameLetters } from '../../../../../../shared/validators/userName';
-import { maxLengthUserName, minLengthUserName } from '../../../../../../shared/validators/lenght';
+import required from '../../../../../shared/validators/required';
+import { passwordLogin } from '../../../../../shared/validators/password';
+import { userNameLetters } from '../../../../../shared/validators/userName';
+import { maxLengthUserName, minLengthUserName } from '../../../../../shared/validators/lenght';
 
-import { AuthInput } from '../../../../../../shared/services/auth.service';
-import { RootState } from '../../../../../../redux/store';
+import { AuthInput } from '../../../../../shared/services/auth.service';
+import { RootState } from '../../../../../redux/store';
 import { NavigationInjectedProps } from 'react-navigation';
 
-import navService from '../../../../../../../src/shared/services/nav.service';
-import * as loginAC from '../../../../../../redux/requests/requestsEntities/auth/login/AC';
-import { getIsLoginRequestLoading } from '../../../../../../redux/requests/selectors';
-import { getIsAuthUser } from '../../../../../../redux/auth/selectors';
+import navService from '../../../../../../src/shared/services/nav.service';
+import * as loginAC from '../../../../../redux/requests/requestsEntities/auth/login/AC';
+import { getIsLoginRequestLoading } from '../../../../../redux/requests/selectors';
+import { getIsAuthUser } from '../../../../../redux/auth/selectors';
 
 type LoginFormData = AuthInput;
 

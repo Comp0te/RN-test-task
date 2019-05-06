@@ -1,25 +1,32 @@
 import React from 'react';
 import style from './style';
-import { greyColor, mainColor } from '../../../../app.style';
+import { greyColor, mainColor } from '../../../../../app.style';
 
 import { Icon } from 'react-native-elements';
 import { createBottomTabNavigator } from 'react-navigation';
 
-import ProductsNavigator from './ProductsNavigator';
-import ProfileNavigator from './ProfileNavigator';
-import navService from '../../../../shared/services/nav.service';
+import navService from '../../../../../shared/services/nav.service';
+
+import ProductsScreen from './ProductsScreen';
+import ProfileScreen from './ProfileScreen';
 
 export default createBottomTabNavigator({
-  ProductsNavigator: {
-    screen: ProductsNavigator,
-    navigationOptions: navService.navigationOptions('Products'),
+  ProductsScreen: {
+    screen: ProductsScreen,
+    navigationOptions: {
+      ...navService.navigationOptions('Products'),
+      header: null,
+    },
   },
-  ProfileNavigator: {
-    screen: ProfileNavigator,
-    navigationOptions: navService.navigationOptions('Profile'),
+  ProfileScreen: {
+    screen: ProfileScreen,
+    navigationOptions: {
+      ...navService.navigationOptions('Profile'),
+      header: null,
+    },
   },
 }, {
-  initialRouteName: 'ProfileNavigator',
+  initialRouteName: 'ProductsScreen',
 
   defaultNavigationOptions: ({navigation}) => ({
     tabBarIcon: ({focused, tintColor}) => {

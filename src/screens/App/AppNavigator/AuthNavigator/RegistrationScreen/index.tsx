@@ -8,20 +8,20 @@ import {
   KeyboardAvoidingView, ScrollView,
 } from 'react-native';
 import { Field, InjectedFormProps, reduxForm } from 'redux-form';
-import FieldInput from '../../../../../../shared/components/FieldInput';
-import CommonButton from '../../../../../../shared/components/CommonButton';
+import FieldInput from '../../../../../shared/components/FieldInput';
+import CommonButton from '../../../../../shared/components/CommonButton';
 
-import required from '../../../../../../shared/validators/required';
-import { passwordRegistration, confirmPassword } from '../../../../../../shared/validators/password';
-import { userNameLetters } from '../../../../../../shared/validators/userName';
-import { maxLengthUserName, minLengthUserName } from '../../../../../../shared/validators/lenght';
+import required from '../../../../../shared/validators/required';
+import { passwordRegistration, confirmPassword } from '../../../../../shared/validators/password';
+import { userNameLetters } from '../../../../../shared/validators/userName';
+import { maxLengthUserName, minLengthUserName } from '../../../../../shared/validators/lenght';
 
-import { AuthInput } from '../../../../../../shared/services/auth.service';
-import { RootState } from '../../../../../../redux/store';
+import { AuthInput } from '../../../../../shared/services/auth.service';
+import { RootState } from '../../../../../redux/store';
 
-import navService from '../../../../../../../src/shared/services/nav.service';
-import * as registerAC from '../../../../../../redux/requests/requestsEntities/auth/register/AC';
-import { getIsRegisterRequestLoading } from '../../../../../../redux/requests/selectors';
+import navService from '../../../../../../src/shared/services/nav.service';
+import * as registerAC from '../../../../../redux/requests/requestsEntities/auth/register/AC';
+import { getIsRegisterRequestLoading } from '../../../../../redux/requests/selectors';
 
 export interface RegisterFormData extends AuthInput {
   confirmPassword: string;

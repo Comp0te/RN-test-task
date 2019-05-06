@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { deviderColor, mainColor, whiteColor } from '../../../../../../app.style';
+import { deviderColor, mainColor, whiteColor } from '../../../../../app.style';
 
 const style = StyleSheet.create({
   safeArea: {

@@ -6,12 +6,14 @@ import {
 
 import navService from '../../../shared/services/nav.service';
 
-import BottomTabBarNavigator from './BottomTabBarNavigator';
+import MainNavigator from './MainNavigator';
+import AuthNavigator from './AuthNavigator';
 import SplashScreen from './SplashScreen';
 
 const Navigator = createSwitchNavigator({
   SplashScreen,
-  BottomTabBarNavigator,
+  AuthNavigator,
+  MainNavigator,
 }, {
   initialRouteName: 'SplashScreen',
 });
