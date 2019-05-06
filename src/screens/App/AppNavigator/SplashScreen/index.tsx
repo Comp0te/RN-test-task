@@ -11,7 +11,7 @@ import { Spinner } from '../../../../shared/components/Spinner';
 
 type Props = DispatchProp<authAC.Actions>;
 
-const SplashScreen: React.FC<Props> = ({dispatch}) => {
+export const SplashScreen: React.FC<Props> = ({dispatch}) => {
 
   useEffect(() => {
     const subscriber = authService.getToken().subscribe(token => {
