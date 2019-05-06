@@ -37,7 +37,7 @@ const mapStateToProps = (state: RootState): StateProps => ({
 
 type Props = StateProps & InjectedFormProps<RegisterFormData>;
 
-const LoginScreen: React.FC<Props> = (props) => {
+const RegistrationScreen: React.FC<Props> = (props) => {
   const {handleSubmit, isLoading} = props;
 
   const submitRegister = (values: RegisterFormData, dispatch: Dispatch<registerAC.Actions>) => {
@@ -132,4 +132,4 @@ export default compose<React.ComponentType>(
     form: 'register',
   }),
   connect(mapStateToProps),
-)(LoginScreen);
+)(RegistrationScreen);
