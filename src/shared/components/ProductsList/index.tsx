@@ -4,7 +4,6 @@ import style from './style';
 import { View, FlatList, ListRenderItem } from 'react-native';
 import ProductItem from '../ProductItem';
 import CommonSearchBar from '../CommonSearchBar';
-import { useIsFirstLoading } from '../../hooks/useIsFirstLoading';
 
 export interface OwnProps {
   isLoadingProducts: boolean;
@@ -20,8 +19,6 @@ const ProductsList: React.FC<Props> = (props) => {
   const {
     productsIds, isLoadingProducts, searchQuery, onRefresh, onSearchProducts,
   } = props;
-
-  const isFirstLoading = useIsFirstLoading(isLoadingProducts);
 
   const keyExtractor = (id: string) => `${id}`;
 
@@ -50,7 +47,7 @@ const ProductsList: React.FC<Props> = (props) => {
         keyExtractor={keyExtractor}
         renderItem={renderItem}
         onRefresh={onRefresh}
-        refreshing={isFirstLoading ? false : isLoadingProducts}
+        refreshing={isLoadingProducts}
         initialNumToRender={10}
         maxToRenderPerBatch={2}
         getItemLayout={getItemLayout}

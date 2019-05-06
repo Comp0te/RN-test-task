@@ -4,6 +4,7 @@ import style from './style';
 
 import { SafeAreaView, View } from 'react-native';
 import ProductsList from '../../../../../../shared/components/ProductsList';
+import Spinner from '../../../../../../shared/components/Spinner';
 
 import { Dispatch } from 'redux';
 import { RootState } from '../../../../../../redux/store';
@@ -12,6 +13,7 @@ import { getIsGetAllProductsRequestLoading } from '../../../../../../redux/reque
 import { getFilteredProductsIds, getProductSearchQuery } from '../../../../../../redux/products/selectors';
 import { requestsAC } from '../../../../../../redux/requests/AC';
 import * as productAC from '../../../../../../redux/products/AC';
+import { useIsFirstLoading } from '../../../../../../shared/hooks/useIsFirstLoading';
 
 interface StateProps {
   isLoadingProducts: boolean;
@@ -60,16 +62,22 @@ const ProductsScreen: React.FC<Props> = (props) => {
     searchProducts(query);
   }, []);
 
+  const isFirstLoading = useIsFirstLoading(isLoadingProducts);
+
   return (
     <SafeAreaView style={style.safeArea}>
       <View style={style.root}>
-        <ProductsList
-          productsIds={productsIds}
-          isLoadingProducts={isLoadingProducts}
-          onRefresh={onRefresh}
-          onSearchProducts={onSearchProducts}
-          searchQuery={searchQuery}
-        />
+        {
+          isFirstLoading ?
+            <Spinner/> :
+            <ProductsList
+              productsIds={productsIds}
+              isLoadingProducts={isFirstLoading ? false : isLoadingProducts}
+              onRefresh={onRefresh}
+              onSearchProducts={onSearchProducts}
+              searchQuery={searchQuery}
+            />
+        }
       </View>
     </SafeAreaView>
   );
