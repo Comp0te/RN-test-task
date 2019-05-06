@@ -3,6 +3,7 @@ import { AuthResponse } from '../src/redux/requests/types';
 import { ProductModel } from '../src/shared/models/product.model';
 import { ReviewModel, ReviewResponse } from '../src/shared/models/review.model';
 import { IReviewPostInput } from '../src/shared/services/reviews.service';
+import { UserModel } from '../src/shared/models/user.model';
 
 export const authInputMock: AuthInput = {
   username: 'Compote',
@@ -49,4 +50,9 @@ export const reviewMock: ReviewModel = {
   product: 1,
   text: 'text',
   rate: 5,
+};
+
+export const userMock: UserModel = {
+  id: 1,
+  username: 'bla-bla',
 };
