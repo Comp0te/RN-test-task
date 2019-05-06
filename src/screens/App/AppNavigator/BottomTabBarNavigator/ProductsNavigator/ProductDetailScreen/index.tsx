@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import style from './style';
 import { staticEndpoint } from '../../../../../../shared/constants/apiEndpoint';
 
-import { SafeAreaView, View, Text } from 'react-native';
-import { Image } from 'react-native-elements';
-import { Spinner } from '../../../../../../shared/components/Spinner';
+import { SafeAreaView, View, Text, ScrollView } from 'react-native';
+import { Image, Divider } from 'react-native-elements';
+import Spinner from '../../../../../../shared/components/Spinner';
+import ReviewsList from '../../../../../../shared/components/ReviewsList';
 
 import { Dispatch } from 'redux';
 import { RootState } from '../../../../../../redux/store';
@@ -15,16 +16,19 @@ import { ProductDetailNavParams } from '../../../../../../shared/components/Prod
 import { ProductModel } from '../../../../../../shared/models/product.model';
 
 import { getIsGetAllReviewsRequestLoading } from '../../../../../../redux/requests/requestsEntities/reviews/getAll/selectors';
-import { getReviewsAllIds } from '../../../../../../redux/reviews/selectors';
+import { getReviewsAllIds, getAverageReviewRateOfProduct } from '../../../../../../redux/reviews/selectors';
 import { getIsAuthUser } from '../../../../../../redux/auth/selectors';
 import { getProductByIdFromNavProps } from '../../../../../../redux/products/selectors';
 import { requestsAC } from '../../../../../../redux/requests/AC';
+import { AverageRate } from '../../../../../../shared/components/AverageRate';
+import { useIsFirstLoading } from '../../../../../../shared/hooks/useIsFirstLoading';
 
 interface StateProps {
   isLoadingReviews: boolean;
   reviewsIds: string[];
   isAuthUser: boolean;
   product?: ProductModel;
+  averageRate: number;
 }
 
 interface DispatchProps {
@@ -37,6 +41,7 @@ const mapStateToProps = (state: RootState, props: Props): StateProps => ({
   reviewsIds: getReviewsAllIds(state),
   product: getProductByIdFromNavProps(state, props),
   isAuthUser: getIsAuthUser(state),
+  averageRate: getAverageReviewRateOfProduct(state, props),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => (
@@ -54,7 +59,8 @@ type Props = StateProps & DispatchProps & NavigationInjectedProps<ProductDetailN
 
 const ProductDetailScreen: React.FC<Props> = (props) => {
   const {
-    navigation, getAllReviews, product,
+    navigation, getAllReviews, product, reviewsIds,
+    averageRate, isLoadingReviews,
   } = props;
 
   const productId = navigation.getParam('productId');
@@ -68,6 +74,8 @@ const ProductDetailScreen: React.FC<Props> = (props) => {
   useEffect(() => {
     onRefresh();
   }, [onRefresh]);
+
+  const isFirstLoading = useIsFirstLoading(isLoadingReviews);
 
   if (!product) {
     return null;
@@ -87,7 +95,23 @@ const ProductDetailScreen: React.FC<Props> = (props) => {
           PlaceholderContent={<Spinner/>}
           placeholderStyle={style.placeholderStyle}
         />
-        <Text style={style.text}>{product.text}</Text>
+        <AverageRate averageRate={averageRate}/>
+        <ScrollView style={style.productTextWrapper}>
+          <Text style={style.text}>{product.text}</Text>
+        </ScrollView>
+        <Text style={[style.text, style.title]}>Reviews</Text>
+        <Divider/>
+        <View style={style.reviewListWrapper}>
+          {
+            isFirstLoading ?
+              <Spinner/> :
+              <ReviewsList
+                reviewsIds={reviewsIds}
+                isLoadingReviews={isFirstLoading ? false : isLoadingReviews}
+                onRefresh={onRefresh}
+              />
+          }
+        </View>
       </View>
     </SafeAreaView>
   );

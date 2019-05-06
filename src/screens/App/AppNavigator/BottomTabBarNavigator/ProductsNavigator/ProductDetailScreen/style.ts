@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { mainColor, whiteColor } from '../../../../../../app.style';
+import { deviderColor, mainColor, whiteColor } from '../../../../../../app.style';
 
 const style = StyleSheet.create({
   safeArea: {
@@ -8,23 +8,39 @@ const style = StyleSheet.create({
   root: {
     flex: 1,
     paddingTop: 59,
-    paddingLeft: 20,
-    paddingRight: 20,
     backgroundColor: whiteColor,
   },
   image: {
     alignSelf: 'center',
     marginBottom: 10,
-    width: 150,
-    height: 150,
+    width: 120,
+    height: 120,
   },
   placeholderStyle: {
     backgroundColor: whiteColor,
   },
   text: {
-    fontSize: 16,
+    marginBottom: 5,
+    fontSize: 14,
     color: mainColor,
+  },
+  title: {
+    marginTop: 5,
+    fontSize: 16,
+    fontWeight: '700',
     textAlign: 'center',
+  },
+  productTextWrapper: {
+    flex: 1,
+    padding: 10,
+    marginRight: 5,
+    marginLeft: 5,
+    borderWidth: 1,
+    borderColor: deviderColor,
+    borderRadius: 10,
+  },
+  reviewListWrapper: {
+    height: 250,
   },
 });
 
