@@ -16,6 +16,9 @@ const style = StyleSheet.create({
   placeholderStyle: {
     backgroundColor: whiteColor,
   },
+  icon: {
+    padding: 10,
+  },
 });
 
 export default style;

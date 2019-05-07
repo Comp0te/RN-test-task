@@ -65,6 +65,7 @@ const ProductsItem: React.FC<Props> = (props) => {
 
   const rightElement = (
     <Icon
+      iconStyle={style.icon}
       name='chevron-right'
       type='font-awesome'
       color={mainColor}
