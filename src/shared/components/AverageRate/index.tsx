@@ -1,13 +1,27 @@
 import React from 'react';
+import style from './style';
+import { connect } from 'react-redux';
+
 import { Rating } from 'react-native-elements';
 import { View, Text } from 'react-native';
-import style from './style';
 
-export interface OwnProps {
+import { RootState } from '../../../redux/store';
+
+import { getAverageReviewRateOfProduct } from '../../../redux/reviews/selectors';
+
+interface OwnProps {
+  productId: string;
+}
+
+interface StateProps {
   averageRate: number;
 }
 
-type Props = OwnProps;
+const mapStateToProps = (state: RootState, props: OwnProps): StateProps => ({
+  averageRate: getAverageReviewRateOfProduct(state, props),
+});
+
+type Props = OwnProps & StateProps;
 
 export const AverageRate: React.FC<Props> = (props) => {
   const {averageRate} = props;
@@ -27,4 +41,4 @@ export const AverageRate: React.FC<Props> = (props) => {
   );
 };
 
-export default React.memo(AverageRate);
+export default connect(mapStateToProps)(AverageRate);

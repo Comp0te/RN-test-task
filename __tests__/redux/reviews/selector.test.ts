@@ -8,9 +8,6 @@ import {
 import { initialState } from '../../../src/redux/reviews/reducers';
 import store, { RootState } from '../../../src/redux/store';
 import { reviewMock } from '../../../__mocks__';
-import reviewsService from '../../../src/shared/services/reviews.service';
-import { of } from 'rxjs';
-import { AjaxResponse } from 'rxjs/ajax';
 
 describe('Redux reviews selectors', () => {
   const state = store.getState();
@@ -47,16 +44,7 @@ describe('Redux reviews selectors', () => {
   });
 
   it(`should get average review rate for product`, () => {
-    const props = {
-      navigation: {
-        getParam: () => jest.fn(),
-      },
-    };
-    jest
-      .spyOn(props.navigation, 'getParam')
-      .mockImplementation(() => '1' as any);
-    // @ts-ignore
-    const selected = getAverageReviewRateOfProduct(mock, props);
+    const selected = getAverageReviewRateOfProduct(mock, {productId: '1'});
 
     expect(selected).toEqual(4);
   });

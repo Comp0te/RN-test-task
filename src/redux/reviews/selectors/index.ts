@@ -1,7 +1,7 @@
 import { RootState } from '../../store';
 import { OwnProps as ReviewItemProps } from '../../../shared/components/ReviewItem';
 import { createSelector } from 'reselect';
-import { getProductIdFromNavProps } from '../../products/selectors';
+import { getProductIdFromProps } from '../../products/selectors';
 
 export const getReviewsEntities = (state: RootState) => state.reviews.entities;
 export const getReviewsAllIds = (state: RootState) => state.reviews.allIds;
@@ -28,7 +28,7 @@ export const getReviewByIdFromProps = createSelector(
 
 export const getAverageReviewRateOfProduct = createSelector(
   [
-    getProductIdFromNavProps,
+    getProductIdFromProps,
     getReviewsEntities,
   ],
   (productId, reviewsEntities) => {
