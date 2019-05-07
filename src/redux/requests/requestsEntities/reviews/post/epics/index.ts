@@ -14,10 +14,14 @@ export const postReviewRequestEpic = (
   ),
   switchMap((action) => reviewsService.postReview(action.payload.data).pipe(
     map(ajaxResponse => {
-      return fromActions.Actions.postReviewSuccess(ajaxResponse.response);
+      if (ajaxResponse.response.success) {
+        return fromActions.Actions.postReviewSuccess(ajaxResponse.response);
+      }
+
+      return fromActions.Actions.postReviewFail(ajaxResponse.response.message);
     }),
     catchError((ajaxError: AjaxError) => {
-      return of(fromActions.Actions.postReviewFail(ajaxError.response));
+      return of(fromActions.Actions.postReviewFail(ajaxError));
     }),
   )),
 );

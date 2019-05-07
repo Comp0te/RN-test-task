@@ -1,6 +1,8 @@
+import { AjaxError } from 'rxjs/ajax';
+
 export interface RequestState<T> {
   isLoading: boolean;
-  errors: string | null;
+  errors: string | AjaxError | null;
   data: T | null;
 }
 
