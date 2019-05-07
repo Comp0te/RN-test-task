@@ -6,6 +6,10 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  wrapper: {
+    justifyContent: 'space-between',
+    height: 150,
+  },
 });
 
 export default style;
