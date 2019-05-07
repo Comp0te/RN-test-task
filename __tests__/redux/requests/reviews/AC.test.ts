@@ -23,6 +23,6 @@ describe('Redux reviews request actions', () => {
   });
 
   it('creates a REVIEW_POST_REQUEST_FAIL action', () => {
-    expect(requestsAC.postReview.Actions.postReviewFail('error')).toMatchSnapshot();
+    expect(requestsAC.postReview.Actions.postReviewFail('error' as never)).toMatchSnapshot();
   });
 });

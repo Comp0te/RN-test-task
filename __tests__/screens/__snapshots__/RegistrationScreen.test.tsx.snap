@@ -700,16 +700,11 @@ exports[`RegistrationScreen renders correctly 1`] = `
           >
             <Text
               style={
-                Array [
-                  Object {
-                    "color": "#BEBEBE",
-                    "fontSize": 11,
-                    "fontWeight": "400",
-                  },
-                  Object {
-                    "color": "#860483",
-                  },
-                ]
+                Object {
+                  "color": "#860483",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                }
               }
             >
               SIGN IN

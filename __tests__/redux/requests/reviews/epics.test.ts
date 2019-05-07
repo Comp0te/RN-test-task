@@ -46,7 +46,7 @@ describe('Reviews requests epics', () => {
 
   it('should dispatch correct action when REVIEW_POST_REQUEST successful', done => {
     const ajaxResponse: Partial<AjaxResponse> = {
-      response: reviewResponseMock,
+      response: {success: true},
     };
     const expectedResponse = requestsAC.postReview.Actions.postReviewSuccess(ajaxResponse.response);
     jest
@@ -61,10 +61,8 @@ describe('Reviews requests epics', () => {
   });
 
   it('should dispatch correct action when REVIEW_POST_REQUEST error', done => {
-    const ajaxError: Partial<AjaxError> = {
-      response: 'error',
-    };
-    const expectedResponse = requestsAC.postReview.Actions.postReviewFail(ajaxError.response);
+    const ajaxError = 'error';
+    const expectedResponse = requestsAC.postReview.Actions.postReviewFail(ajaxError as never);
     jest
       .spyOn(reviewsService, 'postReview')
       .mockImplementation(() => throwError(ajaxError));

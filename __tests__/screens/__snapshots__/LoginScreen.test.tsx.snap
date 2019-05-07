@@ -359,7 +359,7 @@ exports[`LoginScreen renders correctly 1`] = `
           style={
             Object {
               "height": 40,
-              "marginBottom": 10,
+              "marginBottom": 30,
               "width": "100%",
             }
           }
@@ -497,6 +497,41 @@ exports[`LoginScreen renders correctly 1`] = `
           </View>
         </View>
         <View
+          accessible={true}
+          hitSlop={
+            Object {
+              "bottom": 10,
+              "left": 0,
+              "right": 0,
+              "top": 10,
+            }
+          }
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#860483",
+                "fontSize": 12,
+                "fontWeight": "400",
+              }
+            }
+          >
+            SIGN IN LATER
+          </Text>
+        </View>
+        <View
           style={
             Object {
               "alignItems": "center",
@@ -542,16 +577,11 @@ exports[`LoginScreen renders correctly 1`] = `
           >
             <Text
               style={
-                Array [
-                  Object {
-                    "color": "#BEBEBE",
-                    "fontSize": 11,
-                    "fontWeight": "400",
-                  },
-                  Object {
-                    "color": "#860483",
-                  },
-                ]
+                Object {
+                  "color": "#860483",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                }
               }
             >
               SIGN UP

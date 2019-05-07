@@ -48,7 +48,7 @@ describe('Redux reviews request reducers', () => {
   it('update state after REVIEW_POST_REQUEST_FAIL action', () => {
     expect(postReducer(
       postInitialState,
-      requestsAC.postReview.Actions.postReviewFail('error')),
+      requestsAC.postReview.Actions.postReviewFail('error' as never)),
     ).toMatchSnapshot();
   });
 });
