@@ -6,6 +6,7 @@ import { ProductDetailNavParams } from '../../../../shared/components/ProductIte
 
 import BottomTabBarNavigator from './BottomTabBarNavigator';
 import ProductDetailScreen from './ProductDetailScreen';
+import AddReviewScreen from './AddReviewScreen';
 
 export default createStackNavigator({
     BottomTabBarNavigator: {
@@ -20,6 +21,10 @@ export default createStackNavigator({
         ...navService.navigationOptions(''),
         title: `${navigation.getParam('productTitle', '')}`,
       }),
+    },
+    AddReviewScreen: {
+      screen: AddReviewScreen,
+      navigationOptions: navService.navigationOptions('Add Review'),
     },
   }
   , {

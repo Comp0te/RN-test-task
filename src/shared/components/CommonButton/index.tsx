@@ -5,7 +5,7 @@ import { greyColor, whiteColor } from '../../../app.style';
 import { TouchableNativeFeedback } from 'react-native';
 
 export interface OwnProps extends ButtonProps {
-  iconName?: 'sign-in' | 'user-plus' | 'sign-out';
+  iconName?: 'sign-in' | 'user-plus' | 'sign-out' | 'star';
 }
 
 type Props = OwnProps;
