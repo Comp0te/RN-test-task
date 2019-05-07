@@ -56,3 +56,16 @@ export const userMock: UserModel = {
   id: 1,
   username: 'bla-bla',
 };
+
+export const getNavigationPropMock = (expected: any): any => {
+  const props = {
+    navigation: {
+      getParam: () => jest.fn(),
+    },
+  };
+  jest
+    .spyOn(props.navigation, 'getParam')
+    .mockImplementation(() => expected);
+
+  return props;
+};
