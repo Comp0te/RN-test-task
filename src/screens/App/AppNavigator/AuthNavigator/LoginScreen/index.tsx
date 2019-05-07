@@ -4,12 +4,13 @@ import { connect } from 'react-redux';
 import style from './style';
 
 import {
-  View, Text, TouchableOpacity, SafeAreaView,
+  View, Text, SafeAreaView,
   KeyboardAvoidingView, ScrollView,
 } from 'react-native';
 import { Field, InjectedFormProps, reduxForm } from 'redux-form';
 import FieldInput from '../../../../../shared/components/FieldInput';
 import CommonButton from '../../../../../shared/components/CommonButton';
+import Link from '../../../../../shared/components/Link';
 
 import required from '../../../../../shared/validators/required';
 import { passwordLogin } from '../../../../../shared/validators/password';
@@ -66,6 +67,10 @@ const LoginScreen: React.FC<Props> = (props) => {
     navService.navigate('RegistrationScreen');
   };
 
+  const toProductsScreen = () => {
+    navService.navigate('ProductsScreen');
+  };
+
   return (
     <SafeAreaView style={style.safeArea}>
       <ScrollView contentContainerStyle={style.safeArea}>
@@ -108,21 +113,18 @@ const LoginScreen: React.FC<Props> = (props) => {
               iconName='sign-in'
             />
           </View>
+          <Link
+            toScreen={toProductsScreen}
+            text='SIGN IN LATER'
+          />
           <View style={style.singUpWrapper}>
             <Text style={style.text}>
               {'Do not have an account? '.toUpperCase()}
             </Text>
-            <TouchableOpacity
-              onPress={toRegistrationScreen}
-              hitSlop={{
-                top: 10,
-                bottom: 10,
-                right: 0,
-                left: 0,
-              }}
-            >
-              <Text style={[style.text, style.textLink]}>SIGN UP</Text>
-            </TouchableOpacity>
+            <Link
+              toScreen={toRegistrationScreen}
+              text='SIGN UP'
+            />
           </View>
         </KeyboardAvoidingView>
       </ScrollView>

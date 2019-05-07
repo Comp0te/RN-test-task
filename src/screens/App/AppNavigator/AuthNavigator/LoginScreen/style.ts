@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { mainColor, greyColor } from '../../../../../app.style';
+import { greyColor } from '../../../../../app.style';
 
 const style = StyleSheet.create({
   safeArea: {
@@ -25,7 +25,7 @@ const style = StyleSheet.create({
   signInWrapper: {
     width: '100%',
     height: 40,
-    marginBottom: 10,
+    marginBottom: 30,
   },
   singUpWrapper: {
     position: 'absolute',
@@ -41,9 +41,6 @@ const style = StyleSheet.create({
     fontWeight: '400',
     fontSize: 11,
     color: greyColor,
-  },
-  textLink: {
-    color: mainColor,
   },
 });
 

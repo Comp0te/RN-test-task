@@ -4,12 +4,13 @@ import { connect } from 'react-redux';
 import style from './style';
 
 import {
-  View, Text, TouchableOpacity, SafeAreaView,
+  View, Text, SafeAreaView,
   KeyboardAvoidingView, ScrollView,
 } from 'react-native';
 import { Field, InjectedFormProps, reduxForm } from 'redux-form';
 import FieldInput from '../../../../../shared/components/FieldInput';
 import CommonButton from '../../../../../shared/components/CommonButton';
+import Link from '../../../../../shared/components/Link';
 
 import required from '../../../../../shared/validators/required';
 import { passwordRegistration, confirmPassword } from '../../../../../shared/validators/password';
@@ -109,17 +110,10 @@ const RegistrationScreen: React.FC<Props> = (props) => {
             <Text style={style.text}>
               {'Already have an account? '.toUpperCase()}
             </Text>
-            <TouchableOpacity
-              onPress={toLoginScreen}
-              hitSlop={{
-                top: 10,
-                bottom: 10,
-                right: 0,
-                left: 0,
-              }}
-            >
-              <Text style={[style.text, style.textLink]}>SIGN IN</Text>
-            </TouchableOpacity>
+            <Link
+              toScreen={toLoginScreen}
+              text='SIGN IN'
+            />
           </View>
         </KeyboardAvoidingView>
       </ScrollView>
