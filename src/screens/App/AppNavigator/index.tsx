@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import RootToast from '../../../shared/components/RootToast';
 import {
   createAppContainer, createSwitchNavigator, NavigationContainerComponent,
 } from 'react-navigation';
@@ -28,6 +29,7 @@ const AppNavigator: React.FC = () => {
   return (
     <View style={{flex: 1}}>
       <NavigatorContainer ref={setNavigator}/>
+      <RootToast/>
     </View>
   );
 };
