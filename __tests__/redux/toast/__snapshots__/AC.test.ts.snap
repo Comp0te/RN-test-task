@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux toast actions creates a TOAST_RESET action 1`] = `
+Object {
+  "type": "TOAST_RESET",
+}
+`;
+
+exports[`Redux toast actions creates a TOAST_SHOW action 1`] = `
+Object {
+  "payload": Object {
+    "message": "message",
+  },
+  "type": "TOAST_SHOW",
+}
+`;

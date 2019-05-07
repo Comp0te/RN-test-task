@@ -7,6 +7,7 @@ import { authReducer } from './auth/reducers';
 import { productsReducer } from './products/reducers';
 import { reviewsReducer } from './reviews/reducers';
 import { usersReducer } from './users/reducers';
+import { toastReducer } from './toast/reducers';
 import { reducer as formReducer } from 'redux-form';
 
 import { requestsEpics } from './requests/epics';
@@ -14,6 +15,7 @@ import { authEpics } from './auth/epics';
 import { productsEpics } from './products/epics';
 import { reviewsEpics } from './reviews/epics';
 import { usersEpics } from './users/epics';
+import { toastEpics } from './toast/epics';
 
 export const rootReducer = combineReducers({
   requests: requestsReducer,
@@ -22,6 +24,7 @@ export const rootReducer = combineReducers({
   reviews: reviewsReducer,
   users: usersReducer,
   form: formReducer,
+  toast: toastReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
@@ -32,6 +35,7 @@ const rootEpic = combineEpics(
   ...productsEpics,
   ...reviewsEpics,
   ...usersEpics,
+  ...toastEpics,
 );
 
 const epicMiddleware = createEpicMiddleware();

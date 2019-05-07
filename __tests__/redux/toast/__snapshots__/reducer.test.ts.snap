@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux toast reducers update state after TOAST_RESET action 1`] = `
+Object {
+  "message": null,
+}
+`;
+
+exports[`Redux toast reducers update state after TOAST_SHOW action 1`] = `
+Object {
+  "message": "message",
+}
+`;
