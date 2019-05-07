@@ -42,6 +42,9 @@ const style = StyleSheet.create({
   reviewListWrapper: {
     height: 250,
   },
+  addReviewButtonWrapper: {
+    backgroundColor: mainColor,
+  },
 });
 
 export default style;

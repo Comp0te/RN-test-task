@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import style from './style';
 import { staticEndpoint } from '../../../../../shared/constants/apiEndpoint';
 
-import { SafeAreaView, View, Text, ScrollView } from 'react-native';
+import { SafeAreaView, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { Image, Divider } from 'react-native-elements';
 import AverageRate from '../../../../../shared/components/AverageRate';
 import Spinner from '../../../../../shared/components/Spinner';
 import ReviewsList from '../../../../../shared/components/ReviewsList';
+import CommonButton from '../../../../../shared/components/CommonButton';
 
 import { Dispatch } from 'redux';
 import { RootState } from '../../../../../redux/store';
-import { IReviewPostInput } from '../../../../../shared/services/reviews.service';
 import { NavigationInjectedProps } from 'react-navigation';
 import { ProductDetailNavParams } from '../../../../../shared/components/ProductItem';
 import { ProductModel } from '../../../../../shared/models/product.model';
@@ -22,6 +22,7 @@ import { getIsAuthUser } from '../../../../../redux/auth/selectors';
 import { getProductByIdFromNavProps } from '../../../../../redux/products/selectors';
 import { requestsAC } from '../../../../../redux/requests/AC';
 import { useIsFirstLoading } from '../../../../../shared/hooks/useIsFirstLoading';
+import navService from '../../../../../shared/services/nav.service';
 
 interface StateProps {
   isLoadingReviews: boolean;
@@ -32,7 +33,6 @@ interface StateProps {
 
 interface DispatchProps {
   getAllReviews(id: string): void;
-  postReview(input: IReviewPostInput): void;
 }
 
 const mapStateToProps = (state: RootState, props: Props): StateProps => ({
@@ -47,9 +47,6 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => (
     getAllReviews: (id) => {
       dispatch(requestsAC.getAllReviews.Actions.getAllReviews(id));
     },
-    postReview: (input) => {
-      dispatch(requestsAC.postReview.Actions.postReview(input));
-    },
   }
 );
 
@@ -58,7 +55,7 @@ type Props = StateProps & DispatchProps & NavigationInjectedProps<ProductDetailN
 const ProductDetailScreen: React.FC<Props> = (props) => {
   const {
     navigation, getAllReviews, product, reviewsIds,
-    isLoadingReviews,
+    isLoadingReviews, isAuthUser,
   } = props;
 
   const productId = navigation.getParam('productId');
@@ -80,6 +77,16 @@ const ProductDetailScreen: React.FC<Props> = (props) => {
   }
 
   const imageUri = `${staticEndpoint}${product.img}`;
+
+  const toAddReviewScreen = () => {
+    const params: Partial<ProductDetailNavParams> = {
+      productId,
+    };
+
+    navService.navigate('AddReviewScreen', params);
+  };
+
+  const toLoginScreen = () => navService.navigate('LoginScreen');
 
   return (
     <SafeAreaView style={style.safeArea}>
@@ -111,6 +118,19 @@ const ProductDetailScreen: React.FC<Props> = (props) => {
           }
         </View>
       </View>
+      {
+        isAuthUser ?
+          <View style={style.addReviewButtonWrapper}>
+            <CommonButton
+              title='Add Review'
+              onPress={toAddReviewScreen}
+              iconName='star'
+            />
+          </View> :
+          <TouchableOpacity onPress={toLoginScreen}>
+            <Text style={[style.text, style.title]}>Sign in to leave a review.</Text>
+          </TouchableOpacity>
+      }
     </SafeAreaView>
   );
 };
