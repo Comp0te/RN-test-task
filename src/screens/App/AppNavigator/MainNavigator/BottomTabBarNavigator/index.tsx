@@ -32,7 +32,7 @@ export default createBottomTabNavigator({
     tabBarIcon: ({focused, tintColor}) => {
       const {routeName} = navigation.state;
 
-      if (routeName === 'ProfileNavigator') {
+      if (routeName === 'ProfileScreen') {
         return (
           <Icon
             name={focused ? 'user' : 'user-o'}
