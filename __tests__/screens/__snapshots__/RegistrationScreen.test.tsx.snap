@@ -48,7 +48,7 @@ exports[`RegistrationScreen renders correctly 1`] = `
             style={
               Object {
                 "justifyContent": "flex-start",
-                "minHeight": 72,
+                "minHeight": 74,
                 "paddingBottom": 5,
                 "width": "100%",
               }
@@ -208,7 +208,7 @@ exports[`RegistrationScreen renders correctly 1`] = `
             style={
               Object {
                 "justifyContent": "flex-start",
-                "minHeight": 72,
+                "minHeight": 74,
                 "paddingBottom": 5,
                 "width": "100%",
               }
@@ -368,7 +368,7 @@ exports[`RegistrationScreen renders correctly 1`] = `
             style={
               Object {
                 "justifyContent": "flex-start",
-                "minHeight": 72,
+                "minHeight": 74,
                 "paddingBottom": 5,
                 "width": "100%",
               }
