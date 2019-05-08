@@ -48,7 +48,7 @@ exports[`LoginScreen renders correctly 1`] = `
             style={
               Object {
                 "justifyContent": "flex-start",
-                "minHeight": 70,
+                "minHeight": 72,
                 "paddingBottom": 5,
                 "width": "100%",
               }
@@ -183,6 +183,7 @@ exports[`LoginScreen renders correctly 1`] = `
                       "flex": 1,
                       "fontSize": 14,
                       "fontWeight": "400",
+                      "height": 40,
                       "minHeight": 40,
                       "paddingRight": 25,
                       "width": "100%",
@@ -208,7 +209,7 @@ exports[`LoginScreen renders correctly 1`] = `
             style={
               Object {
                 "justifyContent": "flex-start",
-                "minHeight": 70,
+                "minHeight": 72,
                 "paddingBottom": 5,
                 "width": "100%",
               }
@@ -342,6 +343,7 @@ exports[`LoginScreen renders correctly 1`] = `
                       "flex": 1,
                       "fontSize": 14,
                       "fontWeight": "400",
+                      "height": 40,
                       "minHeight": 40,
                       "paddingRight": 25,
                       "width": "100%",
