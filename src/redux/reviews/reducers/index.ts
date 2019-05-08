@@ -14,15 +14,18 @@ export function reviewsReducer(state = initialState, action: fromActions.Actions
     case fromActions.ActionTypes.SET_REVIEWS_DATA: {
       const reviewsFromAction = action.payload.data
         .map<ReviewModel>((review) => new ReviewModel(review));
+
       const newEntities = getNewEntitiesAfterSetData<ReviewModel>(
         state.entities,
         reviewsFromAction,
       );
 
+      const newAllIds = Object.keys(newEntities).reverse();
+
       return {
         ...state,
         entities: newEntities,
-        allIds: Object.keys(newEntities),
+        allIds: [...newAllIds],
       };
     }
 
