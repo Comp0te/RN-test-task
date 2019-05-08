@@ -60,6 +60,25 @@ describe('Reviews requests epics', () => {
     });
   });
 
+  it('should dispatch correct action when REVIEW_POST_REQUEST fail', done => {
+    const ajaxResponse: Partial<AjaxResponse> = {
+      response: {
+        success: false,
+        message: 'error',
+      },
+    };
+    const expectedResponse = requestsAC.postReview.Actions.postReviewFail(ajaxResponse.response.message);
+    jest
+      .spyOn(reviewsService, 'postReview')
+      .mockImplementation(() => of(ajaxResponse as AjaxResponse));
+    const action$ = ActionsObservable.of(requestsAC.postReview.Actions.postReview(reviewPostInputMock));
+
+    postReviewRequestEpic(action$).subscribe((output: any) => {
+      expect(output).toEqual(expectedResponse);
+      done();
+    });
+  });
+
   it('should dispatch correct action when REVIEW_POST_REQUEST error', done => {
     const ajaxError = 'error';
     const expectedResponse = requestsAC.postReview.Actions.postReviewFail(ajaxError as never);

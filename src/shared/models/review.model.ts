@@ -28,3 +28,7 @@ export interface ReviewResponse {
     username: string;
   };
 }
+
+export interface ReviewPostResponse {
+  success: boolean;
+}

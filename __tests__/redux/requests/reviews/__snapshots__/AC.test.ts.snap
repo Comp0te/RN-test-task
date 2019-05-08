@@ -26,14 +26,7 @@ exports[`Redux reviews request actions creates a REVIEW_POST_REQUEST_SUCCESS act
 Object {
   "payload": Object {
     "data": Object {
-      "created_by": Object {
-        "id": 1,
-        "username": "bla-bla",
-      },
-      "id": 1,
-      "product": 1,
-      "rate": 5,
-      "text": "text",
+      "success": true,
     },
   },
   "type": "REVIEW_POST_REQUEST_SUCCESS",

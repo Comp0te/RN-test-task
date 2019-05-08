@@ -1,14 +1,14 @@
 import * as fromActions from '../AC';
 import { RequestState } from '../../../../types';
-import { ReviewResponse } from '../../../../../../shared/models/review.model';
+import { ReviewPostResponse } from '../../../../../../shared/models/review.model';
 
-export const initialState: RequestState<ReviewResponse> = {
+export const initialState: RequestState<ReviewPostResponse> = {
   isLoading: false,
   errors: null,
   data: null,
 };
 
-export function reducer(state = initialState, action: fromActions.Actions): RequestState<ReviewResponse> {
+export function reducer(state = initialState, action: fromActions.Actions): RequestState<ReviewPostResponse> {
 
   switch (action.type) {
     case fromActions.ActionTypes.REVIEW_POST_REQUEST:

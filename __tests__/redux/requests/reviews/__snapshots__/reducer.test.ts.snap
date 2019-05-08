@@ -19,14 +19,7 @@ Object {
 exports[`Redux reviews request reducers update state after REVIEW_POST_REQUEST_SUCCESS action 1`] = `
 Object {
   "data": Object {
-    "created_by": Object {
-      "id": 1,
-      "username": "bla-bla",
-    },
-    "id": 1,
-    "product": 1,
-    "rate": 5,
-    "text": "text",
+    "success": true,
   },
   "errors": null,
   "isLoading": false,

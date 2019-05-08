@@ -41,7 +41,7 @@ describe('Redux reviews request reducers', () => {
   it('update state after REVIEW_POST_REQUEST_SUCCESS action', () => {
     expect(postReducer(
       postInitialState,
-      requestsAC.postReview.Actions.postReviewSuccess(reviewResponseMock)),
+      requestsAC.postReview.Actions.postReviewSuccess({success: true})),
     ).toMatchSnapshot();
   });
 

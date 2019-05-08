@@ -1,6 +1,6 @@
 import { createAction, ActionsUnion } from '../../../../../../shared/helpers/createAction';
 import { IReviewPostInput } from '../../../../../../shared/services/reviews.service';
-import { ReviewResponse } from '../../../../../../shared/models/review.model';
+import { ReviewPostResponse } from '../../../../../../shared/models/review.model';
 import { AjaxError } from 'rxjs/ajax';
 
 export enum ActionTypes {
@@ -11,7 +11,7 @@ export enum ActionTypes {
 
 export const Actions = {
   postReview: (data: IReviewPostInput) => createAction(ActionTypes.REVIEW_POST_REQUEST, {data}),
-  postReviewSuccess: (data: ReviewResponse) => {
+  postReviewSuccess: (data: ReviewPostResponse) => {
     return createAction(ActionTypes.REVIEW_POST_REQUEST_SUCCESS, {data});
   },
   postReviewFail: (errors: AjaxError) => {
