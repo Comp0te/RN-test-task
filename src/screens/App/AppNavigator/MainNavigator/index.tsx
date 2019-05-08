@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator, NavigationScreenProps } from 'react-navigation';
-import HeaderBackIcon from '../../../../shared/HeaderBackIcon';
+import HeaderBackIcon from '../../../../shared/components/HeaderBackIcon';
 
 import navService from '../../../../shared/services/nav.service';
 import { ProductDetailNavParams } from '../../../../shared/components/ProductItem';

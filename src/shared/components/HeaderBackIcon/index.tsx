@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from 'react-native-elements';
 import style from './style';
-import { mainColor } from '../../app.style';
+import { mainColor } from '../../../app.style';
 
 const HeaderBackIcon: React.FC = () => {
   return (
