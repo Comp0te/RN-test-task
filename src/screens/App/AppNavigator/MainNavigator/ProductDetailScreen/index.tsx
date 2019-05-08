@@ -60,15 +60,18 @@ const ProductDetailScreen: React.FC<Props> = (props) => {
 
   const productId = navigation.getParam('productId');
 
-  const onRefresh = useCallback(() => {
+  const fetchReviews = useCallback(() => {
     if (productId) {
       getAllReviews(productId);
     }
   }, [productId]);
 
   useEffect(() => {
-    onRefresh();
-  }, [onRefresh]);
+    const focusListener = navigation.addListener('willFocus', fetchReviews);
+    fetchReviews();
+
+    return () => focusListener.remove();
+  }, [fetchReviews]);
 
   const isFirstLoading = useIsFirstLoading(isLoadingReviews);
 
@@ -113,7 +116,7 @@ const ProductDetailScreen: React.FC<Props> = (props) => {
               <ReviewsList
                 reviewsIds={reviewsIds}
                 isLoadingReviews={isFirstLoading ? false : isLoadingReviews}
-                onRefresh={onRefresh}
+                onRefresh={fetchReviews}
               />
           }
         </View>
