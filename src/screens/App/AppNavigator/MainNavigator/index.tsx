@@ -1,5 +1,6 @@
 import React from 'react';
 import { createStackNavigator, NavigationScreenProps } from 'react-navigation';
+import HeaderBackIcon from '../../../../shared/HeaderBackIcon';
 
 import navService from '../../../../shared/services/nav.service';
 import { ProductDetailNavParams } from '../../../../shared/components/ProductItem';
@@ -18,13 +19,13 @@ export default createStackNavigator({
     ProductDetailScreen: {
       screen: ProductDetailScreen,
       navigationOptions: ({navigation}: NavigationScreenProps<ProductDetailNavParams>) => ({
-        ...navService.navigationOptions(''),
+        ...navService.navigationOptions('', HeaderBackIcon),
         title: `${navigation.getParam('productTitle', '')}`,
       }),
     },
     AddReviewScreen: {
       screen: AddReviewScreen,
-      navigationOptions: navService.navigationOptions('Add Review'),
+      navigationOptions: navService.navigationOptions('Add Review', HeaderBackIcon),
     },
   }
   , {

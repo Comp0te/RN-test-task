@@ -15,12 +15,12 @@ export interface NavOptions {
   headerRight?: JSX.Element;
   headerLeft?: JSX.Element | null;
   headerStyle?: ViewStyle;
-  headerBackImage?: JSX.Element;
+  headerBackImage?: React.ComponentType;
 }
 
 interface INavService {
   navigate(routeName: string, params?: any): void;
-  navigationOptions(title?: string, headerBackImage?: JSX.Element): NavOptions;
+  navigationOptions(title?: string, headerBackImage?: React.ComponentType): NavOptions;
 }
 
 class NavService implements INavService {
@@ -39,7 +39,7 @@ class NavService implements INavService {
     );
   }
 
-  navigationOptions(title?: string, headerBackImage?: JSX.Element): NavOptions {
+  navigationOptions(title?: string, headerBackImage?: React.ComponentType) {
     return {
       title,
       headerTitleStyle,
