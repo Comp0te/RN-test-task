@@ -35,7 +35,9 @@ interface DispatchProps {
   getAllReviews(id: string): void;
 }
 
-const mapStateToProps = (state: RootState, props: Props): StateProps => ({
+type NavProps = NavigationInjectedProps<ProductDetailNavParams>;
+
+const mapStateToProps = (state: RootState, props: NavProps) => ({
   isLoadingReviews: getIsGetAllReviewsRequestLoading(state),
   reviewsIds: getReviewsAllIds(state),
   product: getProductByIdFromNavProps(state, props),
@@ -50,7 +52,7 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => (
   }
 );
 
-type Props = StateProps & DispatchProps & NavigationInjectedProps<ProductDetailNavParams>;
+type Props = StateProps & DispatchProps & NavProps;
 
 const ProductDetailScreen: React.FC<Props> = (props) => {
   const {
@@ -141,4 +143,6 @@ const ProductDetailScreen: React.FC<Props> = (props) => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductDetailScreen);
+export default connect<StateProps, DispatchProps, NavProps, RootState>(
+  mapStateToProps, mapDispatchToProps,
+)(ProductDetailScreen);
