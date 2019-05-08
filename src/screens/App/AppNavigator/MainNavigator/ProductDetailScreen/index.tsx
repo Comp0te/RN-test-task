@@ -130,7 +130,10 @@ const ProductDetailScreen: React.FC<Props> = (props) => {
               iconName='star'
             />
           </View> :
-          <TouchableOpacity onPress={toLoginScreen}>
+          <TouchableOpacity
+            style={style.signInLinkWrapper}
+            onPress={toLoginScreen}
+          >
             <Text style={[style.text, style.title]}>Sign in to leave a review.</Text>
           </TouchableOpacity>
       }

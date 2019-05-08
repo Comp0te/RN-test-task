@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { deviderColor, mainColor, whiteColor } from '../../../../../app.style';
+import { dividerColor, mainColor, whiteColor } from '../../../../../app.style';
 
 const style = StyleSheet.create({
   safeArea: {
@@ -36,7 +36,7 @@ const style = StyleSheet.create({
     marginRight: 5,
     marginLeft: 5,
     borderWidth: 1,
-    borderColor: deviderColor,
+    borderColor: dividerColor,
     borderRadius: 10,
   },
   reviewListWrapper: {
@@ -44,6 +44,10 @@ const style = StyleSheet.create({
   },
   addReviewButtonWrapper: {
     backgroundColor: mainColor,
+  },
+  signInLinkWrapper: {
+    borderTopWidth: 1,
+    borderTopColor: dividerColor,
   },
 });
 
